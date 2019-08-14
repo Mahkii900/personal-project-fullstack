@@ -3,10 +3,9 @@ import {withRouter} from 'react-router-dom'
 
 class Nav extends Component {
     render() {
-        console.log(this.props)
         return (
             <div>
-                {this.props.location.pathname === '/' ? null: (
+                {(this.props.location.pathname === '/' || this.props.location.pathname.includes('/forms/'))? null: (
                     <div>
                         Nav
                     </div>
