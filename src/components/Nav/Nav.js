@@ -1,27 +1,37 @@
 import React, {Component} from 'react'
-import {withRouter} from 'react-router-dom'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class Nav extends Component {
+    state = {
+        username: ''
+    }
+
     logout() {
-        axios.post('/auth/logout').then(res => {
-            this.props.history.push('/')
+        axios.post('/auth/logout')
+    }
+
+    componentDidMount() {
+        axios.get('/auth/username').then(res => {
+            this.setState({username: res.data.username})
         })
     }
 
     render() {
         return (
             <div>
-                {(this.props.location.pathname === '/' || this.props.location.pathname.includes('/forms/'))? null: (
+                <div>
                     <div>
-                        <div></div>
-                        <div>
-                            <button onClick={() => this.logout()}>Log Out</button>
-                        </div>
+                        {this.state.username}
                     </div>
-                )}
+                    <div>
+                        <Link to={'/'}>
+                            <button onClick={() => this.logout()}>Log Out</button>
+                        </Link>
+                    </div>
+                </div>
             </div>
         )
     }
 }
-export default withRouter(Nav)
+export default Nav

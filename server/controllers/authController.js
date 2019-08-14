@@ -20,5 +20,13 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy()
         res.sendStatus(200)
+    },
+
+    getUsername: async (req, res) => {
+        const db = req.app.get('db')
+        const {user_id} = req.session
+
+        const [username] = await db.get_username_by_id([user_id])
+        res.status(200).send(username)
     }
 }
