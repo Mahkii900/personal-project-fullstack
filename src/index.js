@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import {HashRouter} from 'react-router-dom'
 import {Provider} from 'react-redux'
+import store from './ducks/store'
 
 ReactDOM.render(
-    <Provider>
+    <Provider store={store}>
         <HashRouter>
             <App />
         </HashRouter>
