@@ -13,6 +13,7 @@ export default class Room extends Component {
     }
 
     render() {
+        //------Maybe add recent ticket dates to devices--------
         let devices = this.state.devices.map((ele) => <div key={ele.device_id}>{ele.name} {ele.type}</div>)
         return (
             <div>
