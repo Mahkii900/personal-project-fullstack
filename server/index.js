@@ -12,7 +12,10 @@ app.use(express.json())
 app.use(session({
     resave: false,
     saveUninitialized: true,
-    secret: SESSION_SECRET
+    secret: SESSION_SECRET,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    }
 }))
 
 //ENDPOINTS
@@ -23,6 +26,7 @@ app.get('/rooms/forms/:name', rmCtrl.getRoomByName) //gets Room by room name
 app.get('/rooms/:room_id', rmCtrl.getRoomById) //gets Room by ID
 app.get('/rooms/devices/:room_id', rmCtrl.getRoomDevices) //gets room devices by room id
 app.put('/rooms/forms', rmCtrl.makeTicket) //creates ticket in history
+app.get('/rooms/users', rmCtrl.getUserRooms)
 
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {

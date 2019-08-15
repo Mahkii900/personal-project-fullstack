@@ -36,10 +36,22 @@ module.exports = {
         const db = req.app.get('db')
         const {room_id, device_id, content} = req.body
         let d = new Date()
-        console.log(d.getMonth())
         let date = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`
 
         await db.create_ticket([room_id, device_id, content, date])
         res.sendStatus(200)
+    },
+
+    getUserRooms: async (req, res) => {
+        const db = req.app.get('db')
+        console.log(req.session)
+        const {user_id} = req.session
+
+        let rooms = await db.get_user_rooms([user_id])
+
+        if (rooms.length === 0) {
+            res.sendStatus(404)
+        }
+        res.status(200).send(rooms)
     }
 }
