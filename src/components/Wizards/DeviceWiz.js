@@ -6,7 +6,7 @@ export default class DeviceWiz extends Component {
         return (
             <div>
                 <div>
-                    <Link to={'/dashboard'}>
+                    <Link to={'/devicedash'}>
                         <button>Back</button>
                     </Link>
                 </div>

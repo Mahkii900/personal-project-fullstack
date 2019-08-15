@@ -6,7 +6,7 @@ export default class UserWiz extends Component {
         return (
             <div>
                 <div>
-                    <Link to={'/dashboard'}>
+                    <Link to={'/userdash'}>
                         <button>Back</button>
                     </Link>
                 </div>

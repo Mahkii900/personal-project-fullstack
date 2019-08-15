@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export default class Room extends Component {
     state = {
@@ -19,7 +20,9 @@ export default class Room extends Component {
             <div>
                 <div>{this.props.room.name}</div>
                 <div>
-                    <button>Go to {this.props.room.name} view</button>
+                    <Link to={`/rooms/${this.props.room.room_id}`}>
+                        <button>Go to {this.props.room.name} view</button>
+                    </Link>
                 </div>
                 <div>{devices}</div>
             </div>

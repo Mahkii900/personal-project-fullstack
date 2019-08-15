@@ -11,14 +11,14 @@ export default class Dashboard extends Component {
                     <Rooms/>
                 </div>
                 <div>
-                    <Link to={'/wizard/users'}>
-                        <button>Add new user</button>
+                    <Link to={'/userdash'}>
+                        <button>View users</button>
                     </Link>
                     <Link to={'/wizard/rooms'}>
                         <button>Add new room</button>
                     </Link>
-                    <Link to={'/wizard/devices'}>
-                        <button>Add new device</button>
+                    <Link to={'/devicedash'}>
+                        <button>View devices</button>
                     </Link>
                 </div>
             </div>
