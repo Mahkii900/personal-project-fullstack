@@ -7,7 +7,8 @@ export default class Form extends Component {
     state = {
         content: '',
         room_name: '',
-        devices: []
+        devices: [],
+        device_id: 0
     }
 
     getDevices() {
@@ -27,13 +28,28 @@ export default class Form extends Component {
         this.getDevices()
     }
 
+    displaySelectedDevice = () => {
+        let [device] = this.state.devices.filter((ele) => {return ele.device_id === this.state.device_id})
+        return <div>{device.name} {device.type}</div>
+    }
+
+    createTicket() {
+        axios.put('/rooms/forms', {room_id: this.props.match.params.room_id, device_id: this.state.device_id, content: this.state.content}).then(res => {
+        })
+        .catch(err => alert('Request failed to submit'))
+    }
+
     render() {
         const devices = this.state.devices.map((ele )=> {
-            return <RoomDevices
-                name={ele.name}
-                type={ele.type}
-                key={ele.device_id}
-            />
+            return <div key={ele.device_id}>
+                <RoomDevices
+                    name={ele.name}
+                    type={ele.type}
+                />
+                <div>
+                    <button onClick={() => this.setState({device_id: ele.device_id})}>Select Device</button>
+                </div>
+            </div>
         })
         return (
             <div>
@@ -46,14 +62,23 @@ export default class Form extends Component {
                         {devices}
                     </div>
                     <div>
-                        <input type='text' onChange={e => this.setState({content: e.target.value})} placeholder={'Type issue here...'}/>
+                        <div>-----Selected Device------</div>
+                        {this.state.device_id ? this.displaySelectedDevice(): null}
                     </div>
+                    {this.state.device_id ?
                     <div>
-                        {/*Put radio buttons here to select how quickly a request needs to be done*/}
-                    </div>
-                    <div>
-                        <button>Submit Work Request</button>
-                    </div>
+                        <div>
+                            <input type='text' onChange={e => this.setState({content: e.target.value})} placeholder={'Type issue here...'}/>
+                        </div>
+                        <div>
+                            {/*Put radio buttons here to select how quickly a request needs to be done*/}
+                        </div>
+                        <div>
+                            <Link to={'/'}>
+                                <button onClick={() => this.createTicket()}>Submit Work Request</button>
+                            </Link>
+                        </div>
+                    </div>: <div>Please select a device</div>}
                 </div>
                 <div>
                     <Link to={'/'}>

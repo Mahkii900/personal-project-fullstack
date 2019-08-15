@@ -18,10 +18,11 @@ app.use(session({
 //ENDPOINTS
 app.post('/auth/login', authCtrl.login) //Logs user in
 app.post('/auth/logout', authCtrl.logout) //Logs user out
+app.get('/auth/username', authCtrl.getUsername) //Gets username
 app.get('/rooms/forms/:name', rmCtrl.getRoomByName) //gets Room by room name
 app.get('/rooms/:room_id', rmCtrl.getRoomById) //gets Room by ID
 app.get('/rooms/devices/:room_id', rmCtrl.getRoomDevices) //gets room devices by room id
-app.get('/auth/username', authCtrl.getUsername)
+app.put('/rooms/forms', rmCtrl.makeTicket) //creates ticket in history
 
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {

@@ -16,6 +16,10 @@ export default class Home extends Component {
     }
 
     goToForm() {
+        if (!this.state.room_name) {
+            return alert('No room name')
+        }
+        
         axios.get(`/rooms/forms/${this.state.room_name}`).then(res => {
             this.props.history.push(`/forms/${res.data.room_id}`)
         })
