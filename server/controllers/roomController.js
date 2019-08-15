@@ -44,7 +44,6 @@ module.exports = {
 
     getUserRooms: async (req, res) => {
         const db = req.app.get('db')
-        console.log(req.session)
         const {user_id} = req.session
 
         let rooms = await db.get_user_rooms([user_id])
