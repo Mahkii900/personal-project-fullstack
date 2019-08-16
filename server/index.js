@@ -40,6 +40,7 @@ app.put('/devices/new', dvcCtrl.createNewDevice) //creates new device
 
 //user endpoints
 app.get('/users', userCtrl.getAllUsers)
+app.put('/users/new', userCtrl.createNewUser)
 
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {
