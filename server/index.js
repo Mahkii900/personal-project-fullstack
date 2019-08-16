@@ -39,8 +39,8 @@ app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices
 app.put('/devices/new', dvcCtrl.createNewDevice) //creates new device
 
 //user endpoints
-app.get('/users', userCtrl.getAllUsers)
-app.put('/users/new', userCtrl.createNewUser)
+app.get('/users', userCtrl.getAllUsers) //gets all users
+app.put('/users/new', userCtrl.createNewUser) //creates a new user
 
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {
