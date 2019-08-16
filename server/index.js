@@ -7,6 +7,7 @@ const app = express()
 const authCtrl = require('./controllers/authController')
 const rmCtrl = require('./controllers/roomController')
 const dvcCtrl = require('./controllers/deviceController')
+const userCtrl = require('./controllers/userController')
 
 //TOP LEVEL MIDDLEWARE
 app.use(express.json())
@@ -35,6 +36,9 @@ app.get('/rooms/history/:room_id', rmCtrl.getRoomHistory) //gets history by room
 
 //device endpoints
 app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices
+
+//user endpoints
+app.get('/users', userCtrl.getAllUsers)
 
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {

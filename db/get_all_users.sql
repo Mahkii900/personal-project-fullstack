@@ -1,0 +1,1 @@
+SELECT username, email, phone FROM users;
