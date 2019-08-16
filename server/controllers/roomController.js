@@ -52,5 +52,18 @@ module.exports = {
             res.sendStatus(404)
         }
         res.status(200).send(rooms)
+    },
+
+    getRoomHistory: async (req, res) => {
+        const db = req.app.get('db')
+        const {room_id} = req.params
+
+        let history = await db.get_history([room_id])
+
+        if (history.length === 0) {
+            res.status(200).send([{content: 'No history available...', date: '00-0-0000', name: 'N/A', type: 'N/A', id: 1}])
+        }
+
+        res.status(200).send(history)
     }
 }
