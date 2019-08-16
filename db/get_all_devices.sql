@@ -1,0 +1,1 @@
+SELECT DISTINCT type, name FROM devices;

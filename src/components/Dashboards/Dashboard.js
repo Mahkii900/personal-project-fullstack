@@ -7,10 +7,6 @@ export default class Dashboard extends Component {
         return (
             <div>
                 <div>
-                    Dashboard
-                    <Rooms/>
-                </div>
-                <div>
                     <Link to={'/userdash'}>
                         <button>View users</button>
                     </Link>
@@ -20,6 +16,9 @@ export default class Dashboard extends Component {
                     <Link to={'/devicedash'}>
                         <button>View devices</button>
                     </Link>
+                </div>
+                <div>
+                    <Rooms/>
                 </div>
             </div>
         )

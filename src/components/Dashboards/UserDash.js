@@ -6,8 +6,6 @@ export default class UserDash extends Component {
     render() {
         return (
             <div>
-                UserDash!
-                <User/>
                 <div>
                     <Link to={'/devicedash'}>
                         <button>View devices</button>
@@ -19,6 +17,8 @@ export default class UserDash extends Component {
                         <button>View rooms</button>
                     </Link>
                 </div>
+                UserDash!
+                <User/>
             </div>
         )
     }

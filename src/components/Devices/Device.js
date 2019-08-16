@@ -4,7 +4,8 @@ export default class Device extends Component {
     render() {
         return (
             <div>
-                Device
+                <div>{this.props.type}</div>
+                <div>{this.props.name}</div>
             </div>
         )
     }
