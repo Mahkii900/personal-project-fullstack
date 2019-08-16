@@ -36,6 +36,7 @@ app.get('/rooms/history/:room_id', rmCtrl.getRoomHistory) //gets history by room
 
 //device endpoints
 app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices
+app.put('/devices/new', dvcCtrl.createNewDevice) //creates new device
 
 //user endpoints
 app.get('/users', userCtrl.getAllUsers)

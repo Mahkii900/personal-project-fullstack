@@ -1,1 +1,2 @@
-SELECT DISTINCT type, name FROM devices;
+SELECT DISTINCT type, name, device_id FROM devices
+ORDER BY device_id DESC;
