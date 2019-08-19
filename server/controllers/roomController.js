@@ -26,7 +26,7 @@ module.exports = {
 
         const devices = await db.get_room_devices([room_id])
         if (devices.length === 0) {
-            return res.sendStatus(404)
+            return res.status(204).send([{device_id: 0, name: 'NONE', type: 'NO DEVICES FOUND FOR THIS ROOM'}])
         }
 
         res.status(200).send(devices)
@@ -82,7 +82,8 @@ module.exports = {
 
     assignRoom: async (req, res) => {
         const db = req.app.get('db')
-        const {user_id, room_id} = req.body
+        const {room_id} = req.body
+        const {user_id} = req.session
 
         await db.assign_room([user_id, room_id])
 

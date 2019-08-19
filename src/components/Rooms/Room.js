@@ -7,10 +7,15 @@ export default class Room extends Component {
         devices: []
     }
 
-    componentDidMount() {
+    getDevices() {
         axios.get(`/rooms/devices/${this.props.room.room_id}`).then(res => {
             this.setState({devices: res.data})
         })
+    }
+
+    componentDidMount() {
+        this.getDevices()
+        this.setState({room_id: this.props.room.room_id})
     }
 
     render() {
@@ -27,5 +32,12 @@ export default class Room extends Component {
                 <div>{devices}</div>
             </div>
         )
+    }
+
+    componentDidUpdate() {
+        if (this.state.room_id !== this.props.room.room_id) {
+            this.getDevices()
+            this.setState({room_id: this.props.room.room_id})
+        }
     }
 }
