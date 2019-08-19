@@ -26,7 +26,7 @@ module.exports = {
 
         const devices = await db.get_room_devices([room_id])
         if (devices.length === 0) {
-            return res.status(204).send([{device_id: 0, name: 'NONE', type: 'NO DEVICES FOUND FOR THIS ROOM'}])
+            return res.status(200).send([{device_id: 0, name: '', type: 'NO DEVICES FOUND FOR THIS ROOM'}])
         }
 
         res.status(200).send(devices)
@@ -61,7 +61,7 @@ module.exports = {
         let history = await db.get_history([room_id])
 
         if (history.length === 0) {
-            res.status(200).send([{content: 'No history available...', date: '00-0-0000', name: 'N/A', type: 'N/A', id: 1}])
+            res.status(200).send([{content: 'No history available...', date: '', name: 'N/A', type: 'N/A', id: 1}])
         }
 
         res.status(200).send(history)
