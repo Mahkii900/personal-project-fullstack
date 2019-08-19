@@ -8,7 +8,7 @@ export default class RoomWiz extends Component {
     }
 
     createNewRoom() {
-        axios.post('/rooms/new', {name: this.state.name}).catch(err => alert('Unable to assign room to user'))
+        axios.put('/rooms/new', {name: this.state.name}).catch(err => alert('Unable to create room'))
     }
 
     render() {
@@ -24,7 +24,9 @@ export default class RoomWiz extends Component {
                         <input type="text" placeholder={'Room name'} onChange={(e) => this.setState({name: e.target.value})} value={this.state.name}/>
                     </div>
                     <div>
-                        <button onClick={() => this.createNewRoom()}>Create new room</button>
+                        <Link to={'/dashboard'}>
+                            <button onClick={() => this.createNewRoom()}>Create new room</button>
+                        </Link>
                     </div>
                 </div>
                 RoomWiz
