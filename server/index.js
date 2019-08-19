@@ -36,6 +36,7 @@ app.get('/rooms/history/:room_id', rmCtrl.getRoomHistory) //gets history by room
 app.get('/rooms/users/:user_id', rmCtrl.getRoomByUserID) //gets room by user id
 app.post('/rooms/users/assign', rmCtrl.assignRoom) //assigns a room to a user
 app.put('/rooms/new', rmCtrl.createNewRoom) //creates a new room
+app.get('/rooms', rmCtrl.getAllRooms) //gets all rooms & assigned user
 
 //device endpoints
 app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices

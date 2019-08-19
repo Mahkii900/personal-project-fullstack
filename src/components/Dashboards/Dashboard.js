@@ -13,6 +13,9 @@ export default class Dashboard extends Component {
                     <Link to={'/wizard/rooms'}>
                         <button>Add new room</button>
                     </Link>
+                    <Link to={'/roomdash'}>
+                        <button>View all rooms</button>
+                    </Link>
                     <Link to={'/devicedash'}>
                         <button>View devices</button>
                     </Link>

@@ -96,5 +96,17 @@ module.exports = {
         await db.create_room([name])
 
         res.sendStatus(201)
+    },
+
+    getAllRooms: async (req, res) => {
+        const db = req.app.get('db')
+        
+        let rooms = await db.get_all_rooms()
+
+        if (rooms.length === 0) {
+            res.sendStatus(500)
+        }
+
+        res.status(200).send(rooms)
     }
 }

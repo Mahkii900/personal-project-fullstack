@@ -5,6 +5,7 @@ import Form from './components/Form/Form'
 import Dashboard from './components/Dashboards/Dashboard'
 import UserDash from './components/Dashboards/UserDash'
 import DeviceDash from './components/Dashboards/DeviceDash'
+import RoomDash from './components/Dashboards/RoomDash'
 import UserRooms from './components/Users/UserRooms'
 import History from './components/History/History'
 import RoomWiz from './components/Wizards/RoomWiz'
@@ -17,6 +18,7 @@ export default <Switch>
     <Route component={Dashboard} path={'/dashboard'}/>
     <Route component={UserDash} path={'/userdash'}/>
     <Route component={DeviceDash} path={'/devicedash'}/>
+    <Route component={RoomDash} path={'/roomdash'}/>
     <Route component={UserRooms} path={'/users/:user_id'}/>
     <Route component={History} path={'/rooms/:room_id'}/>
     <Route component={RoomWiz} path={'/wizard/rooms'}/>
