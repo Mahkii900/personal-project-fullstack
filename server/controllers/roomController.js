@@ -78,5 +78,23 @@ module.exports = {
         }
 
         res.status(200).send(rooms)
+    },
+
+    assignRoom: async (req, res) => {
+        const db = req.app.get('db')
+        const {user_id, room_id} = req.body
+
+        await db.assign_room([user_id, room_id])
+
+        res.sendStatus(200)
+    },
+
+    createNewRoom: async (req, res) => {
+        const db = req.app.get('db')
+        const {name} = req.body
+
+        await db.create_room([name])
+
+        res.sendStatus(201)
     }
 }
