@@ -17,7 +17,7 @@ export default <Switch>
     <Route component={Dashboard} path={'/dashboard'}/>
     <Route component={UserDash} path={'/userdash'}/>
     <Route component={DeviceDash} path={'/devicedash'}/>
-    <Route component={UserRooms} path={'/user/:user_id'}/>
+    <Route component={UserRooms} path={'/users/:user_id'}/>
     <Route component={History} path={'/rooms/:room_id'}/>
     <Route component={RoomWiz} path={'/wizard/rooms'}/>
     <Route component={DeviceWiz} path={'/wizard/devices'}/>

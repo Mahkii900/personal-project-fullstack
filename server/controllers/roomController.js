@@ -65,5 +65,18 @@ module.exports = {
         }
 
         res.status(200).send(history)
+    },
+
+    getRoomByUserID: async (req, res) => {
+        const db = req.app.get('db')
+        const {user_id} = req.params
+
+        let rooms = await db.get_rooms_by_user_id([user_id])
+
+        if(rooms.lenght === 0) {
+            res.sendStatus(404)
+        }
+
+        res.status(200).send(rooms)
     }
 }

@@ -17,7 +17,7 @@ export default class UserDash extends Component {
     render() {
         const users = this.state.users.map((ele, index) => {
             return <div key={index}>
-                    <User username={ele.username} email={ele.email} phone={ele.phone}/>
+                    <User id={ele.user_id} username={ele.username} email={ele.email} phone={ele.phone}/>
                 </div>
         })
         return (

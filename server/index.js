@@ -33,6 +33,7 @@ app.get('/rooms/devices/:room_id', rmCtrl.getRoomDevices) //gets room devices by
 app.put('/rooms/forms', rmCtrl.makeTicket) //creates ticket in history
 app.get('/users/rooms', rmCtrl.getUserRooms) //gets rooms by user_id (originally i wanted it to be /rooms/users, but it kept throwing an error at me)
 app.get('/rooms/history/:room_id', rmCtrl.getRoomHistory) //gets history by room id
+app.get('/rooms/users/:user_id', rmCtrl.getRoomByUserID) //gets room by user id
 
 //device endpoints
 app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices
