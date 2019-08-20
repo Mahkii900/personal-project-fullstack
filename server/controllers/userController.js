@@ -12,5 +12,13 @@ module.exports = {
 
         await db.create_new_user([username, email, phone, password, firstName, lastName, isAdmin])
         res.sendStatus(200)
+    },
+
+    deleteUser: async (req, res) => {
+        const db = req.app.get('db')
+        const {user_id} = req.params
+
+        await db.delete_user([user_id])
+        res.sendStatus(200)
     }
 }

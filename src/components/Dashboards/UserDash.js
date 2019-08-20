@@ -8,23 +8,37 @@ export default class UserDash extends Component {
         users: []
     }
 
-    componentDidMount() {
+    getUsers() {
         axios.get('/users').then(res => {
             this.setState({users: res.data})
         })
     }
 
+    componentDidMount() {
+        this.getUsers()
+    }
+
+    deleteUser(id) {
+        axios.delete(`/users/${id}`).catch(err => alert('Unable to delete user'))
+        this.getUsers()
+    }
+
     render() {
         const users = this.state.users.map((ele, index) => {
             return <div key={index}>
-                    <User
-                        id={ele.user_id}
-                        username={ele.username}
-                        email={ele.email}
-                        phone={ele.phone}
-                        firstName={ele.first_name}
-                        lastName={ele.last_name}
-                    />
+                    <div>
+                        <User
+                            id={ele.user_id}
+                            username={ele.username}
+                            email={ele.email}
+                            phone={ele.phone}
+                            firstName={ele.first_name}
+                            lastName={ele.last_name}
+                        />
+                    </div>
+                    <div>
+                        <button onClick={() => this.deleteUser(ele.user_id)}>Delete this user</button>
+                    </div>
                 </div>
         })
         return (

@@ -47,6 +47,7 @@ app.put('/devices/new', dvcCtrl.createNewDevice) //creates new device
 //user endpoints
 app.get('/users', userCtrl.getAllUsers) //gets all users
 app.put('/users/new', userCtrl.createNewUser) //creates a new user
+app.delete('/users/:user_id', userCtrl.deleteUser)
 
 //message endpoints
 app.post('/forms/new', msgCtrl.sendEmail) //sends an email to user in charge of room
