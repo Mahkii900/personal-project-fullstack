@@ -7,7 +7,9 @@ class UserWiz extends Component {
         username: '',
         password: '',
         email: '',
-        phone: ''
+        phone: '',
+        firstName: '',
+        lastName: ''
     }
 
     createNewUser() {
@@ -20,14 +22,19 @@ class UserWiz extends Component {
         if (!this.state.phone && ! this.state.email) {
             return alert('No phone and/or email enetered')
         }
+        if (!this.state.firstName && !this.state.lastName) {
+            return alert('Name required')
+        }
         axios.put('/users/new', {
             username: this.state.username,
             password: this.state.password,
             email: this.state.email,
             phone: this.state.phone,
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
             isAdmin: false
         }).then(res => {
-            this.setState({username: '', password: '', email: '', phone: ''})
+            this.setState({username: '', password: '', email: '', phone: '', firstName: '', lastName: ''})
             this.props.history.push('/userdash')
         })
     }
@@ -44,6 +51,8 @@ class UserWiz extends Component {
                     <div>
                         <input placeholder={'Username'} onChange={e => this.setState({username: e.target.value})}/>
                         <input placeholder={'Password'} onChange={e => this.setState({password: e.target.value})}/>
+                        <input placeholder={'First name'} onChange={e => this.setState({firstName: e.target.value})}/>
+                        <input placeholder={'Last name'} onChange={e => this.setState({lastName: e.target.value})}/>
                         <input placeholder={'email'} onChange={e => this.setState({email: e.target.value})}/>
                         <input placeholder={'Phone Number'} onChange={e => this.setState({phone: e.target.value})}/>
                     </div>

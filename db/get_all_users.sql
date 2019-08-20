@@ -1,1 +1,1 @@
-SELECT username, email, phone, user_id FROM users;
+SELECT username, first_name, last_name, email, phone, user_id FROM users;

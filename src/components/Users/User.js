@@ -7,6 +7,8 @@ export default class User extends Component {
             <Link to={`/users/${this.props.id}`}>
                 <div>
                    <div>{this.props.username}</div>
+                   <div>{this.props.firstName}</div>
+                   <div>{this.props.lastName}</div>
                    <div>{this.props.email}</div>
                    <div>{this.props.phone}</div>
                 </div>

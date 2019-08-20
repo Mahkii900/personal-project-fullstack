@@ -8,6 +8,7 @@ const authCtrl = require('./controllers/authController')
 const rmCtrl = require('./controllers/roomController')
 const dvcCtrl = require('./controllers/deviceController')
 const userCtrl = require('./controllers/userController')
+const msgCtrl = require('./controllers/messageController')
 
 //TOP LEVEL MIDDLEWARE
 app.use(express.json())
@@ -45,6 +46,9 @@ app.put('/devices/new', dvcCtrl.createNewDevice) //creates new device
 //user endpoints
 app.get('/users', userCtrl.getAllUsers) //gets all users
 app.put('/users/new', userCtrl.createNewUser) //creates a new user
+
+//message endpoints
+app.post('/forms/new', msgCtrl.sendEmail)
 
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {

@@ -8,9 +8,9 @@ module.exports = {
 
     createNewUser: async (req, res) => {
         const db = req.app.get('db')
-        const {username, email, phone, password, isAdmin} = req.body
+        const {username, email, phone, password, firstName, lastName, isAdmin} = req.body
 
-        await db.create_new_user([username, email, phone, password, isAdmin])
+        await db.create_new_user([username, email, phone, password, firstName, lastName, isAdmin])
         res.sendStatus(200)
     }
 }
