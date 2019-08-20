@@ -61,7 +61,7 @@ module.exports = {
         let history = await db.get_history([room_id])
 
         if (history.length === 0) {
-            res.status(200).send([{content: 'No history available...', date: '', name: 'N/A', type: 'N/A', id: 1}])
+            return res.status(200).send([{content: 'No history available...', date: '', name: 'N/A', type: 'N/A', id: 1}])
         }
 
         res.status(200).send(history)
@@ -73,8 +73,8 @@ module.exports = {
 
         let rooms = await db.get_rooms_by_user_id([user_id])
 
-        if(rooms.lenght === 0) {
-            res.sendStatus(404)
+        if(rooms.length === 0) {
+            return res.sendStatus(404)
         }
 
         res.status(200).send(rooms)
@@ -82,8 +82,7 @@ module.exports = {
 
     assignRoom: async (req, res) => {
         const db = req.app.get('db')
-        const {room_id} = req.body
-        const {user_id} = req.session
+        const {room_id, user_id} = req.body
 
         await db.assign_room([user_id, room_id])
 
@@ -105,7 +104,7 @@ module.exports = {
         let rooms = await db.get_all_rooms()
 
         if (rooms.length === 0) {
-            res.sendStatus(500)
+            return res.sendStatus(500)
         }
 
         res.status(200).send(rooms)
