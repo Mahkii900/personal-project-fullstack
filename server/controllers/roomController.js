@@ -108,5 +108,13 @@ module.exports = {
         }
 
         res.status(200).send(rooms)
+    },
+
+    deleteRoom: async (req, res) => {
+        const db = req.app.get('db')
+        const {room_id} = req.params
+
+        await db.delete_room([room_id])
+        res.sendStatus(200)
     }
 }

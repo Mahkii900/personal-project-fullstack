@@ -37,6 +37,11 @@ export default class RoomDash extends Component {
         .catch(err => alert('Unable to successfully assign user to room'))
     }
 
+    deleteRoom(id) {
+        axios.delete(`/rooms/${id}`).catch(err => alert('Failed to delete room'))
+        this.getAllRooms()
+    }
+
     render() {
         let users = this.state.users.map((ele, index) => {
             return <option key={index} value={ele.user_id}>{ele.first_name} {ele.last_name}</option>
@@ -50,24 +55,30 @@ export default class RoomDash extends Component {
                 <div>
                     {ele.first_name} {ele.last_name}
                 </div>
-                {this.state.showAssignment && ele.room_id === this.state.id ? 
-                (
-                    <div>
+                <div>
+
+                    {this.state.showAssignment && ele.room_id === this.state.id ? 
+                    (
                         <div>
-                            <select onChange={(e) => this.setState({user_id: e.target.value})}>
-                                {users}
-                            </select>
+                            <div>
+                                <select onChange={(e) => this.setState({user_id: e.target.value})}>
+                                    {users}
+                                </select>
+                            </div>
+                            <div>
+                                <button onClick={() => this.assignRoom(ele.room_id, this.state.user_id)}>Confirm</button>
+                            </div>
                         </div>
+                    )
+                    :(
                         <div>
-                            <button onClick={() => this.assignRoom(ele.room_id, this.state.user_id)}>Confirm</button>
+                            <button onClick={() => this.setState({showAssignment: true, id: ele.room_id})}>Assign user to this room</button>
                         </div>
-                    </div>
-                )
-                :(
-                    <div>
-                        <button onClick={() => this.setState({showAssignment: true, id: ele.room_id})}>Assign user to this room</button>
-                    </div>
-                )}
+                    )}
+                </div>
+                <div>
+                    <button onClick={() => this.deleteRoom(ele.room_id)}>Delete {ele.name}</button>
+                </div>
             </div>
         })
         return (
