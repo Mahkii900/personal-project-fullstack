@@ -49,7 +49,7 @@ module.exports = {
         let rooms = await db.get_user_rooms([user_id])
 
         if (rooms.length === 0) {
-            res.sendStatus(404)
+            res.status(200).send('None available')
         }
         res.status(200).send(rooms)
     },

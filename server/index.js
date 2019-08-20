@@ -48,7 +48,8 @@ app.get('/users', userCtrl.getAllUsers) //gets all users
 app.put('/users/new', userCtrl.createNewUser) //creates a new user
 
 //message endpoints
-app.post('/forms/new', msgCtrl.sendEmail)
+app.post('/forms/new', msgCtrl.sendEmail) //sends an email to user in charge of room
+app.post('/forms/new/urgent', msgCtrl.sendText) //sends a text to user in charge of room
 
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {

@@ -6,12 +6,17 @@ export default class Rooms extends Component {
     state = {
         rooms: [],
         showRoom: false,
-        room: {}
+        room: {},
+        roomsAvailable: true,
+        message: ''
     }
 
     getUserRooms() {
         axios.get('/users/rooms').then(res => {
-            this.setState({rooms: res.data})
+            if (res.data === 'None available') {
+                return this.setState({roomsAvailable: false, message: res.data})
+            }
+            this.setState({rooms: res.data, roomsAvailable: true, message: ''})
         })
     }
 
@@ -30,10 +35,11 @@ export default class Rooms extends Component {
         return (
             <div>
                 <div>
+                    {this.state.message}
                     {rooms}
                 </div>
                 <div>
-                    {this.state.showRoom ? <Room room={this.state.room}/>:<div>Select a room</div>}
+                    {this.state.showRoom ? <Room room={this.state.room}/>: this.state.roomsAvailable ? <div>Select a room</div> : null}
                 </div>
             </div>
         )
