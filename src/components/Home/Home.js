@@ -35,7 +35,7 @@ export default class Home extends Component {
                 </div>
                 <div>
                     <input onChange={e => this.setState({username: e.target.value})}placeholder={'Username'}/>
-                    <input onChange={e => this.setState({password: e.target.value})}placeholder={'Password'}/>
+                    <input type="password" onChange={e => this.setState({password: e.target.value})}placeholder={'Password'}/>
                     <button onClick={() => this.login()}>Log In</button>
                 </div>
             </div>

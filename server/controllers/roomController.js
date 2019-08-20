@@ -45,11 +45,11 @@ module.exports = {
     getUserRooms: async (req, res) => {
         const db = req.app.get('db')
         const {user_id} = req.session
-
+        
         let rooms = await db.get_user_rooms([user_id])
 
         if (rooms.length === 0) {
-            res.status(200).send('None available')
+            return res.status(200).send('None available')
         }
         res.status(200).send(rooms)
     },
