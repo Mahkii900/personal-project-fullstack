@@ -110,13 +110,10 @@ module.exports = {
 
     addDevices: async (req, res) => {
         const db = req.app.get('db')
-        const {devices} = req.body
+        const {device} = req.body
         const {room_id} = req.params
 
-        for (let i = 0; i < devices.length; i++) {
-            await db.add_device_to_room([devices[i], room_id])
-        }
-
+        await db.add_device_to_room([device, room_id])
         res.sendStatus(200)
     },
 

@@ -28,8 +28,15 @@ export default class Room extends Component {
         this.setState({room_id: this.props.room.room_id})
     }
 
-    assignDeviceToRoom() {
-        //axios.post('', {})
+    assignDeviceToRoom = (room_id) => {
+        if (!this.state.device_id) {
+            return alert('please select a device...')
+        }
+        axios.post(`/rooms/devices/${room_id}`, {device: this.state.device_id}).then(res => {
+            this.setState({showDevices: false})
+            this.getUnassignedDevices()
+        })
+        .catch(err => alert('Unable to assign device to room'))
     }
 
     render() {
@@ -49,8 +56,10 @@ export default class Room extends Component {
                     {this.state.showDevices ? (
                         <div>
                             <select onChange={(e) => this.setState({device_id: e.target.value})}>
+                                <option value={0}>--</option>
                                 {unassigned}
                             </select>
+                            <button onClick={() => this.assignDeviceToRoom(this.props.room.room_id)}>Add device</button>
                         </div>
                     ):
                     <button onClick={() => this.setState({showDevices: true})}>Add devices to room</button>
