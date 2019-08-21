@@ -30,6 +30,9 @@ export default class Room extends Component {
                     </Link>
                 </div>
                 <div>{devices}</div>
+                <div>
+                    <button>Add devices to room</button>
+                </div>
             </div>
         )
     }

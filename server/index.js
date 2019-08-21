@@ -31,14 +31,14 @@ app.get('/auth/username', authCtrl.getUsername) //Gets username
 app.get('/rooms/forms/:name', rmCtrl.getRoomByName) //gets Room by room name
 app.get('/rooms/:room_id', rmCtrl.getRoomById) //gets Room by ID
 app.get('/rooms/devices/:room_id', rmCtrl.getRoomDevices) //gets room devices by room id
-app.put('/rooms/forms', rmCtrl.makeTicket) //creates ticket in history
 app.get('/users/rooms', rmCtrl.getUserRooms) //gets rooms by user_id (originally i wanted it to be /rooms/users, but it kept throwing an error at me)
 app.get('/rooms/history/:room_id', rmCtrl.getRoomHistory) //gets history by room id
 app.get('/rooms/users/:user_id', rmCtrl.getRoomByUserID) //gets room by user id
 app.post('/rooms/users/assign', rmCtrl.assignRoom) //assigns a room to a user
 app.put('/rooms/new', rmCtrl.createNewRoom) //creates a new room
 app.get('/rooms', rmCtrl.getAllRooms) //gets all rooms & assigned user
-app.delete('/rooms/:room_id', rmCtrl.deleteRoom)
+app.delete('/rooms/:room_id', rmCtrl.deleteRoom) //deletes a room
+app.post('/rooms/devices/:room_id', rmCtrl.addDevices) //adds devices to a room
 
 //device endpoints
 app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices

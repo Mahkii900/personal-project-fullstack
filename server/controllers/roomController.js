@@ -32,16 +32,6 @@ module.exports = {
         res.status(200).send(devices)
     },
 
-    makeTicket: async (req, res) => {
-        const db = req.app.get('db')
-        const {room_id, device_id, content} = req.body
-        let d = new Date()
-        let date = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`
-
-        await db.create_ticket([room_id, device_id, content, date])
-        res.sendStatus(200)
-    },
-
     getUserRooms: async (req, res) => {
         const db = req.app.get('db')
         const {user_id} = req.session
@@ -115,6 +105,18 @@ module.exports = {
         const {room_id} = req.params
 
         await db.delete_room([room_id])
+        res.sendStatus(200)
+    },
+
+    addDevices: async (req, res) => {
+        const db = req.app.get('db')
+        const {devices} = req.body
+        const {room_id} = req.params
+
+        for (let i = 0; i < devices.length; i++) {
+            await db.add_device_to_room([devices[i], room_id])
+        }
+
         res.sendStatus(200)
     }
 }
