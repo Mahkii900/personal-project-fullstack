@@ -41,7 +41,7 @@ export default class Room extends Component {
     }
 
     removeDeviceFromRoom = (device_id) => {
-        axios.post(`/rooms/devices/${device_id}`).then(res => {
+        axios.post(`/devices/rooms/${device_id}`).then(res => {
             this.getDevices()
             this.getUnassignedDevices()
         })
@@ -50,8 +50,8 @@ export default class Room extends Component {
 
     render() {
         //------Maybe add recent ticket dates to devices--------
-        let devices = this.state.devices.map((ele) => <div>
-                <div key={ele.device_id}>
+        let devices = this.state.devices.map((ele) => <div key={ele.device_id}>
+                <div>
                     {ele.name} {ele.type}
                 </div>
                 <div>
