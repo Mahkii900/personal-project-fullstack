@@ -34,14 +34,31 @@ export default class Room extends Component {
         }
         axios.post(`/rooms/devices/${room_id}`, {device: this.state.device_id}).then(res => {
             this.setState({showDevices: false})
+            this.getDevices()
             this.getUnassignedDevices()
         })
         .catch(err => alert('Unable to assign device to room'))
     }
 
+    removeDeviceFromRoom = (device_id) => {
+        axios.post(`/rooms/devices/${device_id}`).then(res => {
+            this.getDevices()
+            this.getUnassignedDevices()
+        })
+        .catch(err => alert('Unable to remove device'))
+    }
+
     render() {
         //------Maybe add recent ticket dates to devices--------
-        let devices = this.state.devices.map((ele) => <div key={ele.device_id}>{ele.name} {ele.type}</div>)
+        let devices = this.state.devices.map((ele) => <div>
+                <div key={ele.device_id}>
+                    {ele.name} {ele.type}
+                </div>
+                <div>
+                    <button onClick={() => this.removeDeviceFromRoom(ele.device_id)}>Remove {ele.name} from room</button>
+                </div>
+            </div>
+        )
         let unassigned = this.state.unAssigned.map((ele) => <option key={ele.device_id} value={ele.device_id}>{ele.name} {ele.type}</option>)
         return (
             <div>
