@@ -30,6 +30,7 @@ app.get('/auth/username', authCtrl.getUsername) //Gets username
 //room endpoints
 app.get('/rooms/forms/:name', rmCtrl.getRoomByName) //gets Room by room name
 app.get('/rooms/:room_id', rmCtrl.getRoomById) //gets Room by ID
+app.get('/rooms/unassigned/devices', rmCtrl.getUnassignedDevices)
 app.get('/rooms/devices/:room_id', rmCtrl.getRoomDevices) //gets room devices by room id
 app.get('/users/rooms', rmCtrl.getUserRooms) //gets rooms by user_id (originally i wanted it to be /rooms/users, but it kept throwing an error at me)
 app.get('/rooms/history/:room_id', rmCtrl.getRoomHistory) //gets history by room id

@@ -4,7 +4,10 @@ import {Link} from 'react-router-dom'
 
 export default class Room extends Component {
     state = {
-        devices: []
+        devices: [],
+        showDevices: false,
+        device_id: 0,
+        unAssigned: []
     }
 
     getDevices() {
@@ -13,14 +16,26 @@ export default class Room extends Component {
         })
     }
 
+    getUnassignedDevices() {
+        axios.get('/rooms/unassigned/devices').then(res => {
+            this.setState({unAssigned: res.data})
+        })
+    }
+
     componentDidMount() {
         this.getDevices()
+        this.getUnassignedDevices()
         this.setState({room_id: this.props.room.room_id})
+    }
+
+    assignDeviceToRoom() {
+        //axios.post('', {})
     }
 
     render() {
         //------Maybe add recent ticket dates to devices--------
         let devices = this.state.devices.map((ele) => <div key={ele.device_id}>{ele.name} {ele.type}</div>)
+        let unassigned = this.state.unAssigned.map((ele) => <option key={ele.device_id} value={ele.device_id}>{ele.name} {ele.type}</option>)
         return (
             <div>
                 <div>{this.props.room.name}</div>
@@ -31,7 +46,15 @@ export default class Room extends Component {
                 </div>
                 <div>{devices}</div>
                 <div>
-                    <button>Add devices to room</button>
+                    {this.state.showDevices ? (
+                        <div>
+                            <select onChange={(e) => this.setState({device_id: e.target.value})}>
+                                {unassigned}
+                            </select>
+                        </div>
+                    ):
+                    <button onClick={() => this.setState({showDevices: true})}>Add devices to room</button>
+                    }
                 </div>
             </div>
         )
@@ -40,6 +63,7 @@ export default class Room extends Component {
     componentDidUpdate() {
         if (this.state.room_id !== this.props.room.room_id) {
             this.getDevices()
+            this.getUnassignedDevices()
             this.setState({room_id: this.props.room.room_id})
         }
     }

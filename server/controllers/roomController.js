@@ -118,5 +118,11 @@ module.exports = {
         }
 
         res.sendStatus(200)
+    },
+
+    getUnassignedDevices: async (req, res) => {
+        const db = req.app.get('db')
+        let devices = await db.get_unassigned_devices()
+        res.status(200).send(devices)
     }
 }
