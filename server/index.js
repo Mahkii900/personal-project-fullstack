@@ -45,6 +45,7 @@ app.post('/rooms/devices/:room_id', rmCtrl.addDevices) //adds devices to a room
 app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices
 app.put('/devices/new', dvcCtrl.createNewDevice) //creates new device
 app.post('/devices/rooms/:device_id', dvcCtrl.removeDeviceFromRoom) //removes device from room
+app.delete('/devices/:device_id', dvcCtrl.deleteDevice) //deletes device
 
 //user endpoints
 app.get('/users', userCtrl.getAllUsers) //gets all users

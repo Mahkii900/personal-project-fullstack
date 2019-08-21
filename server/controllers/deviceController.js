@@ -14,10 +14,18 @@ module.exports = {
     },
 
     removeDeviceFromRoom: async (req, res) => {
-        const db =req.app.get('db')
+        const db = req.app.get('db')
         const {device_id} = req.params
 
         await db.remove_device([device_id])
+        res.sendStatus(200)
+    },
+
+    deleteDevice: async (req, res) => {
+        const db = req.app.get('db')
+        const {device_id} = req.params
+
+        await db.delete_device([device_id])
         res.sendStatus(200)
     }
 }
