@@ -8,7 +8,9 @@ export default class Form extends Component {
         content: '',
         room_name: '',
         devices: [],
-        device_id: 0
+        device: '',
+        device_id: 0,
+        urgency: ''
     }
 
     getDevices() {
@@ -34,9 +36,30 @@ export default class Form extends Component {
     }
 
     createTicket() {
+        /*
         axios.put('/rooms/forms', {room_id: this.props.match.params.room_id, device_id: this.state.device_id, content: this.state.content}).then(res => {
         })
         .catch(err => alert('Request failed to submit'))
+        */
+       if (this.state.urgency === 'Crazy urgent' || this.state.urgency === 'Not so crazy urgent') {
+           axios.post('/forms/new/urgent', {
+               room: this.state.room_name,
+               content: this.state.content,
+               room_id: this.props.match.params.room_id,
+               device_id: this.state.device_id,
+               urgency: this.state.urgency
+            })
+           .catch(err => alert('Request failed to submit'))
+       } else {
+           axios.post('/forms/new', {
+               room: this.state.room_name,
+               content: this.state.content,
+               room_id: this.props.match.params.room_id,
+               device_id: this.state.device_id,
+               urgency: this.state.urgency
+           })
+           .catch(err => alert('Request failed to submit'))
+       }
     }
 
     render() {
@@ -71,7 +94,11 @@ export default class Form extends Component {
                             <input type='text' onChange={e => this.setState({content: e.target.value})} placeholder={'Type issue here...'}/>
                         </div>
                         <div>
-                            {/*Put radio buttons here to select how quickly a request needs to be done*/}
+                            <select onChange={(e) => this.setState({urgency: e.target.value})}>
+                                <option value='Crazy urgent'>Crazy urgent</option>
+                                <option value='Not so crazy urgent'>Not so crazy urgent</option>
+                                <option value='Not urgent at all'>Not urgent at all</option>
+                            </select>
                         </div>
                         <div>
                             <Link to={'/'}>
