@@ -19,12 +19,14 @@ class Nav extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <div>
-                        {this.state.username}
+            <div className="nav-bar">
+                <div className="nav-bar-content">
+                    <div className="nav-bar-username">
+                        <div className='nav-bar-username-container'>
+                            {this.state.username}
+                        </div>
                     </div>
-                    <div>
+                    <div className="nav-bar-logout">
                         <Link to={'/'}>
                             <button onClick={() => this.logout()}>Log Out</button>
                         </Link>
