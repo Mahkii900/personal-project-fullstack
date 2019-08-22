@@ -33,5 +33,9 @@ module.exports = {
 
         const [username] = await db.get_username_by_id([user_id])
         res.status(200).send(username)
+    },
+
+    isAdmin: (req, res) => {
+        res.status(200).send(req.session.isAdmin)
     }
 }

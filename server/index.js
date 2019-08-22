@@ -27,6 +27,7 @@ app.use(session({
 app.post('/auth/login', authCtrl.login) //Logs user in
 app.post('/auth/logout', authCtrl.logout) //Logs user out
 app.get('/auth/username', midWare.authenticate, authCtrl.getUsername) //Gets username
+app.get('/auth/admin', midWare.authenticate, authCtrl.isAdmin) //gets whether or not user has admin access
 
 //room endpoints
 app.get('/rooms/forms/:name', rmCtrl.getRoomByName) //gets Room by room name
