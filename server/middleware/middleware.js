@@ -14,7 +14,8 @@ module.exports = {
     adminAccess: (req, res, next) => {
         if (req.session.isAdmin) {
             next()
-        }
+        } else {
         res.sendStatus(403)
+        }
     }
 }
