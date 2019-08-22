@@ -43,7 +43,7 @@ export default class UserDash extends Component {
         })
         return (
             <div>
-                <div>
+                <div className="admin-bar">
                     <Link to={'/devicedash'}>
                         <button>View devices</button>
                     </Link>

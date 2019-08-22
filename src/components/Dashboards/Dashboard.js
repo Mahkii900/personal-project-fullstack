@@ -20,10 +20,10 @@ export default class Dashboard extends Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className="main-content">
+                <div className="top-bar">
                     {this.state.isAdmin ? 
-                    <div>
+                    <div className="admin-bar">
 
                     <Link to={'/userdash'}>
                         <button>View users</button>
@@ -40,7 +40,7 @@ export default class Dashboard extends Component {
                     </div>
                     : null}
                 </div>
-                <div>
+                <div className="bottom-stuff">
                     <Rooms/>
                 </div>
             </div>

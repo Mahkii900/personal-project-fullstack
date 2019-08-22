@@ -1,3 +1,8 @@
+/*
+Put a picture in the background for home page
+Also, make the home page box bigger and add another div to Home.js
+*/
+
 body {
   background: darkgrey;
 }
@@ -59,15 +64,14 @@ body {
 }
 
 .nav-bar-content {
-  border: 1px solid black;
   height: 10vh;
+  background: gray;
   display: flex;
   justify-content: flex-start;
 }
 
 .nav-bar-username {
   width: 50%;
-  background: linear-gradient(to right, darkgray, gray);
   display: flex;
   align-items: center;
 }
@@ -86,8 +90,59 @@ body {
 }
 
 .nav-bar-logout {
-  background: linear-gradient(to left, darkgray, gray);
   width: 50%;
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
+}
+
+.nav-bar-logout button {
+  margin-right: 10vw;
+  background: white;
+  width: 10vw;
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+}
+
+.main-content {
+  border: 1px solid black;
+  background: white;
+  height: 80vh;
+}
+
+.top-bar {
+  height: 10%;
+  width: 100%;
+}
+
+.admin-bar {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.admin-bar button {
+  height: 8vh;
+  border: 1px solid black;
+  width: 23.9vw;
+}
+
+.bottom-stuff {
+  height: 89%;
+}
+
+.room-main-content {
+  height: 100%;
+  display: flex;
+}
+
+.room-left-content {
+  border: 1px solid red;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
 }

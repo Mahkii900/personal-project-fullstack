@@ -33,12 +33,12 @@ export default class Rooms extends Component {
             return <button onClick={() => this.displayRoomInfo(ele)} key={ele.room_id}>{ele.name}</button>
         })
         return (
-            <div>
-                <div>
+            <div className='room-main-content'>
+                <div className='room-left-content'>
                     {this.state.message}
                     {rooms}
                 </div>
-                <div>
+                <div className='room-right-content'>
                     {this.state.showRoom ? <Room room={this.state.room}/>: this.state.roomsAvailable ? <div>Select a room</div> : null}
                 </div>
             </div>
