@@ -1,3 +1,5 @@
+const bcyrpt = require('bcryptjs')
+
 module.exports = {
     getAllUsers: async (req, res) => {
         const db = req.app.get('db')
@@ -10,7 +12,9 @@ module.exports = {
         const db = req.app.get('db')
         const {username, email, phone, password, firstName, lastName, isAdmin} = req.body
 
-        await db.create_new_user([username, email, phone, password, firstName, lastName, isAdmin])
+        const salt = bcyrpt.genSaltSync(10)
+        const hash = bcyrpt.hashSync(password, salt)
+        await db.create_new_user([username, email, phone, hash, firstName, lastName, isAdmin])
         res.sendStatus(200)
     },
 

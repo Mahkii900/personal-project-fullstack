@@ -9,6 +9,7 @@ const rmCtrl = require('./controllers/roomController')
 const dvcCtrl = require('./controllers/deviceController')
 const userCtrl = require('./controllers/userController')
 const msgCtrl = require('./controllers/messageController')
+const midWare = require('./middleware/middleware')
 
 //TOP LEVEL MIDDLEWARE
 app.use(express.json())
@@ -25,32 +26,32 @@ app.use(session({
 //auth endpoints
 app.post('/auth/login', authCtrl.login) //Logs user in
 app.post('/auth/logout', authCtrl.logout) //Logs user out
-app.get('/auth/username', authCtrl.getUsername) //Gets username
+app.get('/auth/username', midWare.authenticate, authCtrl.getUsername) //Gets username
 
 //room endpoints
 app.get('/rooms/forms/:name', rmCtrl.getRoomByName) //gets Room by room name
 app.get('/rooms/:room_id', rmCtrl.getRoomById) //gets Room by ID
-app.get('/rooms/unassigned/devices', rmCtrl.getUnassignedDevices) //gets all unassigned devices
-app.get('/rooms/devices/:room_id', rmCtrl.getRoomDevices) //gets room devices by room id
-app.get('/users/rooms', rmCtrl.getUserRooms) //gets rooms by user_id (originally i wanted it to be /rooms/users, but it kept throwing an error at me)
-app.get('/rooms/history/:room_id', rmCtrl.getRoomHistory) //gets history by room id
-app.get('/rooms/users/:user_id', rmCtrl.getRoomByUserID) //gets room by user id
-app.post('/rooms/users/assign', rmCtrl.assignRoom) //assigns a room to a user
-app.put('/rooms/new', rmCtrl.createNewRoom) //creates a new room
-app.get('/rooms', rmCtrl.getAllRooms) //gets all rooms & assigned user
-app.delete('/rooms/:room_id', rmCtrl.deleteRoom) //deletes a room
+app.get('/rooms/unassigned/devices', midWare.authenticate, rmCtrl.getUnassignedDevices) //gets all unassigned devices
+app.get('/rooms/devices/:room_id', midWare.authenticate, rmCtrl.getRoomDevices) //gets room devices by room id
+app.get('/users/rooms', midWare.authenticate, rmCtrl.getUserRooms) //gets rooms by user_id (originally i wanted it to be /rooms/users, but it kept throwing an error at me)
+app.get('/rooms/history/:room_id', midWare.authenticate, rmCtrl.getRoomHistory) //gets history by room id
+app.get('/rooms/users/:user_id', midWare.authenticate, rmCtrl.getRoomByUserID) //gets room by user id
+app.post('/rooms/users/assign', midWare.authenticate, midWare.adminAccess, rmCtrl.assignRoom) //assigns a room to a user
+app.put('/rooms/new', midWare.authenticate, midWare.adminAccess, rmCtrl.createNewRoom) //creates a new room
+app.get('/rooms', midWare.authenticate, rmCtrl.getAllRooms) //gets all rooms & assigned user
+app.delete('/rooms/:room_id', midWare.authenticate, midWare.adminAccess, rmCtrl.deleteRoom) //deletes a room
 app.post('/rooms/devices/:room_id', rmCtrl.addDevices) //adds devices to a room
 
 //device endpoints
-app.get('/devices', dvcCtrl.getAllDevices) //gets all distinct devices
+app.get('/devices', midWare.authenticate, dvcCtrl.getAllDevices) //gets all distinct devices
 app.put('/devices/new', dvcCtrl.createNewDevice) //creates new device
 app.post('/devices/rooms/:device_id', dvcCtrl.removeDeviceFromRoom) //removes device from room
 app.delete('/devices/:device_id', dvcCtrl.deleteDevice) //deletes device
 
 //user endpoints
-app.get('/users', userCtrl.getAllUsers) //gets all users
-app.put('/users/new', userCtrl.createNewUser) //creates a new user
-app.delete('/users/:user_id', userCtrl.deleteUser)
+app.get('/users', midWare.authenticate, userCtrl.getAllUsers) //gets all users
+app.put('/users/new', midWare.authenticate, midWare.adminAccess, userCtrl.createNewUser) //creates a new user
+app.delete('/users/:user_id', midWare.authenticate, midWare.adminAccess, userCtrl.deleteUser)
 
 //message endpoints
 app.post('/forms/new', msgCtrl.sendEmail) //sends an email to user in charge of room

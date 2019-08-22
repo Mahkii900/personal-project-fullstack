@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs')
+
 module.exports = {
     login: async (req, res) => {
         const db = req.app.get('db')
@@ -9,11 +11,14 @@ module.exports = {
             return res.sendStatus(404)
         }
 
-        if (user.password !== password) {
+        const result = bcrypt.compareSync(password, user.password)
+        if (!result) {
             return res.sendStatus(403)
         }
 
+        delete user.password
         req.session.user_id = user.user_id
+        req.session.isAdmin = user.is_admin
         res.sendStatus(200)
     },
 
