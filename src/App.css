@@ -13,6 +13,7 @@ body {
   padding-bottom: 2%;
 }
 
+/* Home page css */
 .home {
   margin-top: 20vh;
   height: 40vh;
@@ -63,6 +64,7 @@ body {
   height: 3vh;
 }
 
+/* Nav bar css */
 .nav-bar-content {
   height: 10vh;
   background: gray;
@@ -87,6 +89,7 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  cursor: default;
 }
 
 .nav-bar-logout {
@@ -103,8 +106,10 @@ body {
   padding: 5px;
   border-radius: 20px;
   border: 2px solid darkgray;
+  cursor: pointer;
 }
 
+/* dashboard css */
 .main-content {
   background: white;
   height: 80vh;
@@ -127,6 +132,7 @@ body {
   height: 8vh;
   border: 1px solid black;
   width: 23.9vw;
+  cursor: pointer;
 }
 
 .bottom-stuff {
@@ -145,6 +151,10 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
+}
+
+.room-left-content button {
+  cursor: pointer;
 }
 
 .room-right-content {
@@ -179,6 +189,7 @@ body {
   height: 6vh;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
 }
 
 .room-bottom-container {
@@ -219,6 +230,7 @@ body {
 .room-bottom-device-container button {
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .room-bottom-selection {
@@ -257,7 +269,40 @@ body {
 }
 
 .room-bottom-selection-buttons button {
+  cursor: pointer;
+}
+
+.room-bottom-selection-buttons button {
   border: none;
   border-radius: 10px;
   padding: 6px;
+}
+
+/* Room wizard css */
+.wizard {
+  display: flex;
+}
+
+.back-button {
+  width: 10%;
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.back-button button {
+  border: none;
+  border-radius: 20px;
+  padding: 7px;
+  font-size: 20px;
+  width: 5vw;
+  cursor: pointer;
+}
+
+.room-wiz-main-content {
+  border: 1px solid black;
+  width: 85%;
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;
 }

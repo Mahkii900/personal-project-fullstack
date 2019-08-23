@@ -13,13 +13,13 @@ export default class RoomWiz extends Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className='main-content wizard'>
+                <div className='back-button'>
                     <Link to={'/dashboard'}>
                         <button>Back</button>
                     </Link>
                 </div>
-                <div>
+                <div className='room-wiz-main-content'>
                     <div>
                         <input type="text" placeholder={'Room name'} onChange={(e) => this.setState({name: e.target.value})} value={this.state.name}/>
                     </div>
@@ -29,7 +29,6 @@ export default class RoomWiz extends Component {
                         </Link>
                     </div>
                 </div>
-                RoomWiz
             </div>
         )
     }
