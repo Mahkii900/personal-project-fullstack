@@ -102,7 +102,7 @@ body {
   width: 10vw;
   padding: 5px;
   border-radius: 20px;
-  border: none;
+  border: 2px solid darkgray;
 }
 
 .main-content {
@@ -139,7 +139,6 @@ body {
 }
 
 .room-left-content {
-  border: 1px solid red;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -149,8 +148,76 @@ body {
 }
 
 .room-right-content {
-  border: 1px solid purple;
   width: 77%;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.room-top-container {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.room-top-roomname {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+}
+
+.room-top-nav-button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-top-nav-button button {
+  height: 6vh;
+  border-radius: 20px;
+  border: none;
+}
+
+.room-bottom-container {
+  border: 1px solid red;
+  height: 60vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.room-bottom-devices {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-bottom-device-container {
+  border: 1px solid darkgray;
+  background: gray;
+  margin-bottom: 2px;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.room-device-name-container {
+  width: 20%;
+}
+
+.room-device-model-container {
+  width: 40%;
+}
+
+.room-device-button-container {
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.room-bottom-device-container button {
+  border: none;
+  border-radius: 10px;
 }

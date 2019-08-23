@@ -50,37 +50,46 @@ export default class Room extends Component {
 
     render() {
         //------Maybe add recent ticket dates to devices--------
-        let devices = this.state.devices.map((ele) => <div key={ele.device_id}>
-                <div>
-                    {ele.name} {ele.type}
+        let devices = this.state.devices.map((ele) => <div className='room-bottom-device-container' key={ele.device_id}>
+                <div className='room-device-name-container'>
+                    {ele.name}
                 </div>
-                <div>
-                    <button onClick={() => this.removeDeviceFromRoom(ele.device_id)}>Remove {ele.name} from room</button>
+                <div className='room-device-model-container'>
+                    {ele.type}
+                </div>
+                <div className='room-device-button-container'>
+                    <button onClick={() => this.removeDeviceFromRoom(ele.device_id)}>Remove {ele.name}</button>
                 </div>
             </div>
         )
         let unassigned = this.state.unAssigned.map((ele) => <option key={ele.device_id} value={ele.device_id}>{ele.name} {ele.type}</option>)
         return (
             <div>
-                <div>{this.props.room.name}</div>
-                <div>
-                    <Link to={`/rooms/${this.props.room.room_id}`}>
-                        <button>Go to {this.props.room.name} view</button>
-                    </Link>
+                <div className='room-top-container'>
+                    <div className='room-top-roomname'>{this.props.room.name}</div>
+                    <div className='room-top-nav-button'>
+                        <Link to={`/rooms/${this.props.room.room_id}`}>
+                            <button>Go to {this.props.room.name} view</button>
+                        </Link>
+                    </div>
                 </div>
-                <div>{devices}</div>
-                <div>
-                    {this.state.showDevices ? (
-                        <div>
-                            <select onChange={(e) => this.setState({device_id: e.target.value})}>
-                                <option value={0}>--</option>
-                                {unassigned}
-                            </select>
-                            <button onClick={() => this.assignDeviceToRoom(this.props.room.room_id)}>Add device</button>
-                        </div>
-                    ):
-                    <button onClick={() => this.setState({showDevices: true})}>Add devices to room</button>
-                    }
+                <div className='room-bottom-container'>
+                    <div className='room-bottom-devices'>
+                        {devices}
+                    </div>
+                    <div>
+                        {this.state.showDevices ? (
+                            <div>
+                                <select onChange={(e) => this.setState({device_id: e.target.value})}>
+                                    <option value={0}>--</option>
+                                    {unassigned}
+                                </select>
+                                <button onClick={() => this.assignDeviceToRoom(this.props.room.room_id)}>Add device</button>
+                            </div>
+                        ):
+                        <button onClick={() => this.setState({showDevices: true})}>Add devices to room</button>
+                        }
+                    </div>
                 </div>
             </div>
         )
