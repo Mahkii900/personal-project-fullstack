@@ -77,17 +77,28 @@ export default class Room extends Component {
                     <div className='room-bottom-devices'>
                         {devices}
                     </div>
-                    <div>
+                    <div className='room-bottom-selection'>
                         {this.state.showDevices ? (
-                            <div>
-                                <select onChange={(e) => this.setState({device_id: e.target.value})}>
-                                    <option value={0}>--</option>
-                                    {unassigned}
-                                </select>
-                                <button onClick={() => this.assignDeviceToRoom(this.props.room.room_id)}>Add device</button>
+                            <div className='room-bottom-selection-selected'>
+                                <div className='room-bottom-selection-selection'>
+                                    <select onChange={(e) => this.setState({device_id: e.target.value})}>
+                                        <option value={0}>--</option>
+                                        {unassigned}
+                                    </select>
+                                </div>
+                                <div className='room-bottom-selection-buttons'>
+                                    <div className='room-bottom-selection-add'>
+                                        <button onClick={() => this.assignDeviceToRoom(this.props.room.room_id)}>Add device</button>
+                                    </div>
+                                    <div classNam='room-bottom-selection-cancel'>
+                                        <button onClick={() => this.setState({showDevices: false})}>Cancel</button>
+                                    </div>
+                                </div>
                             </div>
                         ):
-                        <button onClick={() => this.setState({showDevices: true})}>Add devices to room</button>
+                        <div className='room-bottom-selection-show'>
+                            <button onClick={() => this.setState({showDevices: true})}>Add devices to room</button>
+                        </div>
                         }
                     </div>
                 </div>

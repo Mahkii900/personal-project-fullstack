@@ -182,7 +182,6 @@ body {
 }
 
 .room-bottom-container {
-  border: 1px solid red;
   height: 60vh;
   display: flex;
   justify-content: space-between;
@@ -220,4 +219,45 @@ body {
 .room-bottom-device-container button {
   border: none;
   border-radius: 10px;
+}
+
+.room-bottom-selection {
+  width: 45%;
+}
+
+.room-bottom-selection-show {
+  height: 10%;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.room-bottom-selection-selected {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-bottom-selection-selection {
+  margin-top: 1%;
+  height: 10%;
+}
+
+.room-bottom-selection-selection select {
+  width: 100%;
+  height: 100%;
+}
+
+.room-bottom-selection-buttons {
+  margin-top: 10%;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.room-bottom-selection-buttons button {
+  border: none;
+  border-radius: 10px;
+  padding: 6px;
 }

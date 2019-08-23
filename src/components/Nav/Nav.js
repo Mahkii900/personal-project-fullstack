@@ -23,7 +23,7 @@ class Nav extends Component {
                 <div className="nav-bar-content">
                     <div className="nav-bar-username">
                         <div className='nav-bar-username-container'>
-                            {this.state.username}
+                            User: {this.state.username}
                         </div>
                     </div>
                     <div className="nav-bar-logout">
