@@ -30,6 +30,9 @@ export default class RoomDash extends Component {
     }
 
     assignRoom(room_id, user_id) {
+        if (!this.state.user_id) {
+            return alert('Please select a user')
+        }
         axios.post('/rooms/users/assign', {room_id: room_id, user_id: user_id}).then(res => {
             this.setState({showAssignment: false, id: 0})
             this.getAllRooms()
@@ -62,6 +65,7 @@ export default class RoomDash extends Component {
                         <div>
                             <div>
                                 <select onChange={(e) => this.setState({user_id: e.target.value})}>
+                                <option value={0}>--</option>
                                     {users}
                                 </select>
                             </div>
