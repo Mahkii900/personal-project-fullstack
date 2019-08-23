@@ -26,29 +26,31 @@ export default class DeviceDash extends Component {
 
     render() {
         const devices = this.state.devices.map((ele, index) => {
-            return <div key={index}>
+            return <div key={index} className='device-display-info-container'>
                     <div>
                         <Device name={ele.name} type={ele.type}/>
                     </div>
-                    <div>
+                    <div className='device-display-delete-button'>
                         <button onClick={() => this.deleteDevice(ele.device_id)}>Delete {ele.name}</button>
                     </div>
                 </div>
         })
         return (
-            <div>
-                <div className="admin-bar">
-                    <Link to={'/userdash'}>
-                        <button>View users</button>
-                    </Link>
-                    <Link to={'/wizard/devices'}>
-                        <button>Add new device</button>
-                    </Link>
-                    <Link to={'/dashboard'}>
-                        <button>View rooms</button>
-                    </Link>
+            <div className='main-content'>
+                <div className='top-bar'>
+                    <div className="admin-bar">
+                        <Link to={'/userdash'}>
+                            <button>View users</button>
+                        </Link>
+                        <Link to={'/wizard/devices'}>
+                            <button>Add new device</button>
+                        </Link>
+                        <Link to={'/dashboard'}>
+                            <button>View rooms</button>
+                        </Link>
+                    </div>
                 </div>
-                <div>
+                <div className='device-main-content'>
                     {devices}
                 </div>
             </div>

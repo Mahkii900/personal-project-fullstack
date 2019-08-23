@@ -300,9 +300,51 @@ body {
 }
 
 .room-wiz-main-content {
-  border: 1px solid black;
   width: 85%;
   padding: 2.5%;
   display: flex;
   justify-content: center;
 }
+
+/* DeviceDash */
+.device-main-content {
+  height: 64vh;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device-display-info-container {
+  border: 1px solid black;
+  background: darkgray;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  align-items: center;
+  padding: 5px;
+}
+
+.devicedash-name-container {
+  display: flex;
+  justify-content: space-between;
+  width: 25vw;
+}
+
+.device-name-container-model {
+  width: 50%;
+}
+
+.device-display-delete-button {
+  width: 20%;
+  display: flex;
+}
+
+.device-display-delete-button button {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Device Wizard */

@@ -23,13 +23,13 @@ class DeviceWiz extends Component {
 
     render() {
         return (
-            <div>
-                <div>
+            <div className='main-content wizard'>
+                <div className='back-button'>
                     <Link to={'/devicedash'}>
                         <button>Back</button>
                     </Link>
                 </div>
-                <div>
+                <div className='room-wiz-main-content'>
                     <div>
                         <input placeholder={'Device Name...'} onChange={e => this.setState({name: e.target.value})}/>
                         <input placeholder={'Device Model...'} onChange={e => this.setState({model: e.target.value})}/>
