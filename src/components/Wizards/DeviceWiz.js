@@ -31,13 +31,13 @@ class DeviceWiz extends Component {
                         </Link>
                     </div>
                     <div className='device-wiz-main-content'>
-                        <div>
+                        <div className='device-wiz-input'>
                             <input placeholder={'Device Name...'} onChange={e => this.setState({name: e.target.value})}/>
                         </div>
-                        <div>
+                        <div className='device-wiz-input'>
                             <input placeholder={'Device Model...'} onChange={e => this.setState({model: e.target.value})}/>
                         </div>
-                        <div>
+                        <div className='device-wiz-add-button'>
                             <button onClick={() => this.createNewDevice()}>Add device</button>
                         </div>
                     </div>

@@ -43,16 +43,18 @@ export default class UserDash extends Component {
         })
         return (
             <div>
-                <div className="admin-bar">
-                    <Link to={'/devicedash'}>
-                        <button>View devices</button>
-                    </Link>
-                    <Link to={'/wizard/users'}>
-                        <button>Add new user</button>
-                    </Link>
-                    <Link to={'/dashboard'}>
-                        <button>View rooms</button>
-                    </Link>
+                <div className='top-bar'>
+                    <div className="admin-bar">
+                        <Link to={'/devicedash'}>
+                            <button>View devices</button>
+                        </Link>
+                        <Link to={'/wizard/users'}>
+                            <button>Add new user</button>
+                        </Link>
+                        <Link to={'/dashboard'}>
+                            <button>View rooms</button>
+                        </Link>
+                    </div>
                 </div>
                 {users}
             </div>

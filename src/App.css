@@ -585,7 +585,7 @@
 .device-wiz-dash {
   border: 2px solid #c6ca53;
   border-radius: 20px;
-  background: #555358;
+  background: #5f6062;
   height: 60%;
   margin-top: 5%;
   width: 55%;
@@ -594,7 +594,6 @@
 }
 
 .device-wiz-main-content {
-  border: 1px solid black;
   width: 80%;
   padding-left: 2%;
   display: flex;
@@ -603,3 +602,50 @@
   justify-content: center;
 }
 
+.device-wiz-input {
+  width: 40%;
+  margin-bottom: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.device-wiz-input input {
+  border-radius: 10px;
+  border: none;
+  padding: 1%;
+  padding-left: 5%;
+  width: 100%;
+}
+
+.device-wiz-add-button {
+  width: 20%;
+}
+
+.device-wiz-add-button button {
+  margin-top: 20%;
+  border: 2px solid #555358;
+  border-radius: 10px;
+  padding: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+  background: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.device-wiz-add-button button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}
+
+/* user dash */
+.color-saver {
+  background: #555358;
+  background: #5f6062;
+  background: #7b7263;
+  background: #c6ca53;
+  background: #dce8e4;
+}
