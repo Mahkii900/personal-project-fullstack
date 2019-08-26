@@ -1,31 +1,53 @@
-/*
-Put a picture in the background for home page
-Also, make the home page box bigger and add another div to Home.js
-*/
-
-body {
-  background: darkgrey;
-}
-
-.App {
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-bottom: 2%;
-}
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 
 /* Home page css */
+
+.App {
+  margin: none;
+  padding: none;
+}
+
+.home-background {
+  height: 100vh;
+  width: 100vw;
+  /*background-image: url(''); -------Put in leather couch or workbench photo here-------*/
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-box {
+  border-left: 3px solid #555358;
+  border-right: 3px solid #555358;
+  border-bottom: 3px solid #555358;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Varela Round', sans-serif;
+  font-style: italic;
+  font-size: 30px;
+  background: rgba(95, 96, 98, 0.9);
+  width: 17%;
+  color: #c6ca53;
+}
+
 .home {
-  margin-top: 20vh;
-  height: 40vh;
+  margin-top: 2%;
+  height: 50vh;
+  width: 100vw;
   display: flex;
   justify-content: flex-start;
 }
 
 .form-target-box {
-  border: 1px solid gray;
-  background: gray;
+  border: 3px solid #555358;
+  background: rgba(95, 96, 98, 0.9);
+  border-radius: 20px;
   margin-left: 25%;
   display: flex;
+  width: 15%;
   flex-direction: column;
   justify-content: space-around;
   padding: 10px;
@@ -34,17 +56,28 @@ body {
 .form-target-box input {
   margin-top: 10px;
   padding: 2px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 17px;
 }
 
 .form-target-box button {
   border-radius: 10px;
   border: none;
-  height: 3vh;
+  padding: 3px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.form-target-box button:hover {
+  background-color: #555358;
+  color: #c6ca53;
 }
 
 .login-box {
-  border: 1px solid gray;
-  background: gray;
+  border: 3px solid #555358;
+  border-radius: 20px;
+  background: rgba(95, 96, 98, 0.9);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -56,18 +89,28 @@ body {
 .login-box input {
   opacity: 1;
   padding: 2px;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 17px;
 }
 
 .login-box button {
   border-radius: 10px;
   border: none;
-  height: 3vh;
+  font-family: 'Varela Round', sans-serif;
+  padding: 3px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background-color: #555358;
+  color: #c6ca53;
 }
 
 /* Nav bar css */
 .nav-bar-content {
   height: 10vh;
-  background: gray;
+  background: rgba(95, 96, 98, 0.75);
   display: flex;
   justify-content: flex-start;
 }
@@ -80,7 +123,7 @@ body {
 
 .nav-bar-username-container {
   margin-left: 20%;
-  background: white;
+  background: #dce8e4;
   height: 50%;
   min-width: 10%;
   padding-left: 10px;
@@ -89,7 +132,9 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  border: 2px solid #c6ca53;
   cursor: default;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .nav-bar-logout {
@@ -101,24 +146,35 @@ body {
 
 .nav-bar-logout button {
   margin-right: 10vw;
-  background: white;
+  background: #dce8e4;
   width: 10vw;
   padding: 5px;
   border-radius: 20px;
-  border: 2px solid darkgray;
+  border: 2px solid #c6ca53;
   cursor: pointer;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+}
+
+.nav-bar-logout button:hover {
+  background: #555358;
+  color: #c6ca53;
 }
 
 /* dashboard css */
 .main-content {
-  background: white;
   height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top-bar {
   height: 10%;
   width: 100%;
-  background: gray;
+  background: rgba(95, 96, 98, 0.75);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .admin-bar {
@@ -129,14 +185,30 @@ body {
 }
 
 .admin-bar button {
-  height: 8vh;
-  border: 1px solid black;
-  width: 23.9vw;
+  height: 6vh;
+  background-color: #7b7263;
+  border: 3px solid #555358;
+  width: 15vw;
   cursor: pointer;
+  border-radius: 10px;
+  font-family: 'Varela Round', sans-serif;
+  font-style: italic;
+  color: #c6ca53;
+  font-size: 20px;
+}
+
+.admin-bar button:hover {
+  background-color: #dce8e4;
+  color: #7b7263;
 }
 
 .bottom-stuff {
+  border: 2px solid #c6ca53;
+  border-radius: 20px;
+  background-color: rgba(85, 83, 88, .75);
+  margin-top: 2%;
   height: 89%;
+  width: 80%;
 }
 
 .room-main-content {
@@ -155,6 +227,17 @@ body {
 
 .room-left-content button {
   cursor: pointer;
+  border: 2px solid #555358;
+  border-radius: 10px;
+  background-color: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 17px;
+}
+
+.room-left-content button:hover {
+  background: #dce8e4;
+  color: #555358;
 }
 
 .room-right-content {
@@ -168,13 +251,18 @@ body {
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .room-top-roomname {
-  width: 50%;
+  width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid #dce8e4;
+  border-radius: 20px;
+  background: #5f6062;
+  color: #dce8e4;
   font-size: 27px;
 }
 
@@ -188,29 +276,45 @@ body {
 .room-top-nav-button button {
   height: 6vh;
   border-radius: 20px;
-  border: none;
+  border: 2px solid #555358;
+  background-color: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
   cursor: pointer;
 }
 
+.room-top-nav-button button:hover {
+  background-color: #dce8e4;
+  color: #7b7263;
+}
+
 .room-bottom-container {
-  height: 60vh;
+  margin-top: 5px;
+  height: 55vh;
   display: flex;
   justify-content: space-between;
 }
 
 .room-bottom-devices {
+  border: 5px solid #5f6062;
+  border-radius: 10px;
+  background: #5f6062;
+  height: 100%;
   width: 50%;
   display: flex;
   flex-direction: column;
 }
 
 .room-bottom-device-container {
-  border: 1px solid darkgray;
-  background: gray;
-  margin-bottom: 2px;
+  border-radius: 10px;
+  border: 1px solid #dce8e4;
+  background: #555358;
+  color: #c6ca53;
+  margin-bottom: 5px;
   padding: 4px;
   display: flex;
   justify-content: space-between;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .room-device-name-container {
@@ -230,18 +334,41 @@ body {
 .room-bottom-device-container button {
   border: none;
   border-radius: 10px;
+  background-color: #dce8e4;
   cursor: pointer;
+  color: #5f6062;
+  font-size: 15px;
+}
+
+.room-bottom-device-container button:hover {
+  background-color: #7b7263;
+  color: #c6ca53;
 }
 
 .room-bottom-selection {
   width: 45%;
 }
 
+
 .room-bottom-selection-show {
   height: 10%;
   padding: 4px;
   display: flex;
   justify-content: center;
+}
+
+.room-bottom-selection-show button {
+  border: 2px solid #555358;
+  border-radius: 20px;
+  background: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  cursor: pointer;
+}
+
+.room-bottom-selection-show button:hover {
+  background: #dce8e4;
+  color: #7b7263;
 }
 
 .room-bottom-selection-selected {
@@ -258,6 +385,8 @@ body {
 .room-bottom-selection-selection select {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  font-family: 'Varela Round', sans-serif;
 }
 
 .room-bottom-selection-buttons {
@@ -270,17 +399,31 @@ body {
 
 .room-bottom-selection-buttons button {
   cursor: pointer;
-}
-
-.room-bottom-selection-buttons button {
-  border: none;
+  background-color: #7b7263;
+  border: 2px solid #555358;
   border-radius: 10px;
   padding: 6px;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.room-bottom-selection-buttons button:hover {
+  background-color: #dce8e4;
+  color: #7b7263;
 }
 
 /* Room wizard css */
 .wizard {
   display: flex;
+}
+
+.room-wiz-content {
+  border: 3px solid #555358;
+  border-radius: 20px;
+  background-color: rgba(85, 83, 88, .75);
+  width: 80%;
+  height: 80%;
+  margin-top: 5%;
 }
 
 .back-button {

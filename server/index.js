@@ -61,5 +61,5 @@ app.post('/forms/new/urgent', msgCtrl.sendText) //sends a text to user in charge
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
-    app.listen(SERVER_PORT, () => console.log(`Captain's Log #${SERVER_PORT}: We are lost in space...`))
+    app.listen(SERVER_PORT, () => console.log(`Captain's Log #${SERVER_PORT}: W are lost in space...`))
 })

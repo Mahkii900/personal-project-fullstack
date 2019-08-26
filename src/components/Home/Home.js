@@ -28,15 +28,22 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className="home">
-                <div className="form-target-box">
-                    <input onChange={e => this.setState({room_name: e.target.value})}placeholder={'Room ID'}/>
-                    <button onClick={() => this.goToForm()}>Go to form</button>
+            <div className='home-background'>
+                <div className='title-box'>
+                    <h1>
+                        Frencio
+                    </h1>
                 </div>
-                <div className="login-box">
-                    <input onChange={e => this.setState({username: e.target.value})}placeholder={'Username'}/>
-                    <input type="password" onChange={e => this.setState({password: e.target.value})}placeholder={'Password'}/>
-                    <button onClick={() => this.login()}>Log In</button>
+                <div className="home">
+                    <div className="form-target-box">
+                        <input onChange={e => this.setState({room_name: e.target.value})}placeholder={'Room ID'}/>
+                        <button onClick={() => this.goToForm()}>Go to form</button>
+                    </div>
+                    <div className="login-box">
+                        <input onChange={e => this.setState({username: e.target.value})}placeholder={'Username'}/>
+                        <input type="password" onChange={e => this.setState({password: e.target.value})}placeholder={'Password'}/>
+                        <button onClick={() => this.login()}>Log In</button>
+                    </div>
                 </div>
             </div>
         )

@@ -14,19 +14,21 @@ export default class RoomWiz extends Component {
     render() {
         return (
             <div className='main-content wizard'>
-                <div className='back-button'>
-                    <Link to={'/dashboard'}>
-                        <button>Back</button>
-                    </Link>
-                </div>
-                <div className='room-wiz-main-content'>
-                    <div>
-                        <input type="text" placeholder={'Room name'} onChange={(e) => this.setState({name: e.target.value})} value={this.state.name}/>
-                    </div>
-                    <div>
+                <div className='room-wiz-content'>
+                    <div className='back-button'>
                         <Link to={'/dashboard'}>
-                            <button onClick={() => this.createNewRoom()}>Create new room</button>
+                            <button>Back</button>
                         </Link>
+                    </div>
+                    <div className='room-wiz-main-content'>
+                        <div>
+                            <input type="text" placeholder={'Room name'} onChange={(e) => this.setState({name: e.target.value})} value={this.state.name}/>
+                        </div>
+                        <div>
+                            <Link to={'/dashboard'}>
+                                <button onClick={() => this.createNewRoom()}>Create new room</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
