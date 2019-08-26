@@ -23,19 +23,23 @@ class DeviceWiz extends Component {
 
     render() {
         return (
-            <div className='main-content wizard'>
-                <div className='back-button'>
-                    <Link to={'/devicedash'}>
-                        <button>Back</button>
-                    </Link>
-                </div>
-                <div className='room-wiz-main-content'>
-                    <div>
-                        <input placeholder={'Device Name...'} onChange={e => this.setState({name: e.target.value})}/>
-                        <input placeholder={'Device Model...'} onChange={e => this.setState({model: e.target.value})}/>
+            <div className='main-content-device-wiz'>
+                <div className='device-wiz-dash'>
+                    <div className='back-button'>
+                        <Link to={'/devicedash'}>
+                            <button>Back</button>
+                        </Link>
                     </div>
-                    <div>
-                        <button onClick={() => this.createNewDevice()}>Add device</button>
+                    <div className='device-wiz-main-content'>
+                        <div>
+                            <input placeholder={'Device Name...'} onChange={e => this.setState({name: e.target.value})}/>
+                        </div>
+                        <div>
+                            <input placeholder={'Device Model...'} onChange={e => this.setState({model: e.target.value})}/>
+                        </div>
+                        <div>
+                            <button onClick={() => this.createNewDevice()}>Add device</button>
+                        </div>
                     </div>
                 </div>
             </div>

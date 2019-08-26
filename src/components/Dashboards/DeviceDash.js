@@ -27,8 +27,9 @@ export default class DeviceDash extends Component {
     render() {
         const devices = this.state.devices.map((ele, index) => {
             return <div key={index} className='device-display-info-container'>
-                    <div>
-                        <Device name={ele.name} type={ele.type}/>
+                    <div className='device-info-device-container'>
+                        <Device name={ele.name}
+                        type={ele.type}/>
                     </div>
                     <div className='device-display-delete-button'>
                         <button onClick={() => this.deleteDevice(ele.device_id)}>Delete {ele.name}</button>

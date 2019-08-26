@@ -216,6 +216,7 @@
   display: flex;
 }
 
+
 .room-left-content {
   width: 20%;
   display: flex;
@@ -223,6 +224,13 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.room-left-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .room-left-content button {
@@ -303,6 +311,13 @@
   width: 50%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.room-bottom-devices::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .room-bottom-device-container {
@@ -508,9 +523,83 @@
   margin-top: 3%;
   border: 2px solid #c6ca53;
   border-radius: 20px;
-  height: 70%;
-  background-color: #5f6062;
+  height: 60%;
+  width: 45%;
+  background-color: rgba(85, 83, 88, .75);
+  padding: 1%;
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.device-main-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.device-display-info-container {
+  border: 2px solid #7b7263;
+  background: #555358;
+  color: #c6ca53;
+  margin-bottom: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+}
+
+.device-display-info-container button {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  background: #7b7263;
+  color: #c6ca53;
+  cursor: pointer;
+}
+
+.device-display-info-container button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}
+
+.device-info-device-container {
+  width: 70%;
+}
+
+.devicedash-name-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.device-name-container-model {
+  width: 50%;
 }
 
 /* Device Wizard */
+.main-content-device-wiz {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+.device-wiz-dash {
+  border: 2px solid #c6ca53;
+  border-radius: 20px;
+  background: #555358;
+  height: 60%;
+  margin-top: 5%;
+  width: 55%;
+  display: flex;
+  padding: 2%;
+}
+
+.device-wiz-main-content {
+  border: 1px solid black;
+  width: 80%;
+  padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
