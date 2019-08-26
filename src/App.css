@@ -434,60 +434,83 @@
 }
 
 .back-button button {
-  border: none;
+  border: 2px solid #555358;
   border-radius: 20px;
   padding: 7px;
   font-size: 20px;
   width: 5vw;
   cursor: pointer;
+  background-color: #7b7263;
+  color: #c6ca53;
+}
+
+.back-button button:hover {
+  background-color: #dce8e4;
+  color: #7b7263;
 }
 
 .room-wiz-main-content {
   width: 85%;
   padding: 2.5%;
+  height: 30%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-/* DeviceDash */
-.device-main-content {
-  height: 64vh;
-  padding: 2%;
+.room-wiz-form-box {
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.device-display-info-container {
-  border: 1px solid black;
-  background: darkgray;
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
-  margin-bottom: 2px;
-  align-items: center;
-  padding: 5px;
-}
-
-.devicedash-name-container {
-  display: flex;
-  justify-content: space-between;
-  width: 25vw;
-}
-
-.device-name-container-model {
-  width: 50%;
-}
-
-.device-display-delete-button {
-  width: 20%;
-  display: flex;
-}
-
-.device-display-delete-button button {
-  border: none;
+.room-wiz-form-box input {
   border-radius: 10px;
+  border: none;
+  padding: 3%;
+  width: 100%;
+}
+
+.room-wiz-form-box button {
+  margin-top: 20%;
+  border-radius: 20px;
+  border: 2px solid #555358;
+  background-color: #7b7263;
+  color: #c6ca53;
+  padding: 5%;
+  width: 100%;
   cursor: pointer;
+}
+
+.room-wiz-form-box button:hover {
+  background-color: #dce8e4;
+  color: #7b7263;
+}
+
+/* DeviceDash */
+.device-dash {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.device-top-bar {
+  height: 7vh;
+  width: 100%;
+  background: rgba(95, 96, 98, 0.75);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.device-main-content {
+  margin-top: 3%;
+  border: 2px solid #c6ca53;
+  border-radius: 20px;
+  height: 70%;
+  background-color: #5f6062;
+  display: flex;
 }
 
 /* Device Wizard */

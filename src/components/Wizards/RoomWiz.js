@@ -21,13 +21,15 @@ export default class RoomWiz extends Component {
                         </Link>
                     </div>
                     <div className='room-wiz-main-content'>
-                        <div>
-                            <input type="text" placeholder={'Room name'} onChange={(e) => this.setState({name: e.target.value})} value={this.state.name}/>
-                        </div>
-                        <div>
-                            <Link to={'/dashboard'}>
-                                <button onClick={() => this.createNewRoom()}>Create new room</button>
-                            </Link>
+                        <div className='room-wiz-form-box'>
+                            <div>
+                                <input type="text" placeholder={'Room name'} onChange={(e) => this.setState({name: e.target.value})} value={this.state.name}/>
+                            </div>
+                            <div>
+                                <Link to={'/dashboard'}>
+                                    <button onClick={() => this.createNewRoom()}>Create new room</button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
