@@ -822,3 +822,147 @@
 }
 
 /* forms */
+.form-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.form-main-content {
+  border: 3px solid #555358;
+  border-radius: 20px;
+  margin-top: 8%;
+  padding: 1%;
+  height: 60vh;
+  width: 60vw;
+  background-color: rgba(85, 83, 88, .75);
+  display: flex;
+}
+
+.form-back-button-box button {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  background: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.form-back-button-box button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}
+
+.form-main-display-box {
+  margin-left: 2%;
+  width: 83%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-room-name-box {
+  border: 3px solid #dce8e4;
+  border-radius: 20px;
+  padding: 4px;
+  background: #5f6062;
+  color: #dce8e4;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+  cursor: default;
+}
+
+.form-display-input {
+  border: 2px solid #555358;
+  border-radius: 20px;
+  margin-top: 2%;
+  width: 80%;
+  height: 80%;
+  padding: 2%;
+  background: #5f6062;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-device-select {
+  height: 10%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.form-device-select select {
+  width: 100%;
+  padding: 2%;
+  border-radius: 20px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.form-device-unselected {
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+}
+
+.form-device-input-box {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-device-issue-input {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.form-device-issue-input textarea {
+  border: 2px solid #c6ca53;
+  border-radius: 20px;
+  width: 100%;
+  padding: 3%;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.form-device-issue-input textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.form-issue-select {
+  width: 70%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.form-issue-select select {
+  width: 100%;
+  border: none;
+  padding: 2%;
+  border-radius: 20px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.form-issue-button-box button {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  background: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-issue-button-box button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}

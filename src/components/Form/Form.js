@@ -61,41 +61,45 @@ export default class Form extends Component {
             </option>
         })
         return (
-            <div>
-                <div>
-                    Room: {this.state.room_name}
-                </div>
-                <div>
-                    <div>
-                        <select onChange={e => this.setState({device_id: e.target.value})}>
-                            <option value={0}>--</option>
-                            {devices}
-                        </select>
+            <div className='form-body'>
+                <div className='form-main-content'>
+                    <div className='form-back-button-box'>
+                        <Link to={'/'}>
+                            <button>Back To Home</button>
+                        </Link>
                     </div>
-                    {this.state.device_id ?
-                    <div>
-                        <div>
-                            <input type='text' onChange={e => this.setState({content: e.target.value})} placeholder={'Type issue here...'}/>
+                    <div className='form-main-display-box'>
+                        <div className='form-room-name-box'>
+                            {this.state.room_name}
                         </div>
-                        <div>
-                            <select onChange={(e) => this.setState({urgency: e.target.value})}>
-                                <option value='--'>--</option>
-                                <option value='Crazy urgent'>Crazy urgent</option>
-                                <option value='Not so crazy urgent'>Not so crazy urgent</option>
-                                <option value='Not urgent at all'>Not urgent at all</option>
-                            </select>
+                        <div className='form-display-input'>
+                            <div className='form-device-select'>
+                                <select onChange={e => this.setState({device_id: e.target.value})}>
+                                    <option value={0}>-Select device-</option>
+                                    {devices}
+                                </select>
+                            </div>
+                            {this.state.device_id ?
+                            <div className='form-device-input-box'>
+                                <div className='form-device-issue-input'>
+                                    <textarea name='textarea' cols='40' rows='5' placeholder='Type issue here...'></textarea>
+                                </div>
+                                <div className='form-issue-select'>
+                                    <select onChange={(e) => this.setState({urgency: e.target.value})}>
+                                        <option value='--'>-Select urgency-</option>
+                                        <option value='Crazy urgent'>Crazy urgent</option>
+                                        <option value='Not so crazy urgent'>Not so crazy urgent</option>
+                                        <option value='Not urgent at all'>Not urgent at all</option>
+                                    </select>
+                                </div>
+                                <div className='form-issue-button-box'>
+                                    <Link to={'/'}>
+                                        <button onClick={() => this.createTicket()}>Submit Work Request</button>
+                                    </Link>
+                                </div>
+                            </div>: <div className='form-device-unselected'>Please select a device</div>}
                         </div>
-                        <div>
-                            <Link to={'/'}>
-                                <button onClick={() => this.createTicket()}>Submit Work Request</button>
-                            </Link>
-                        </div>
-                    </div>: <div>Please select a device</div>}
-                </div>
-                <div>
-                    <Link to={'/'}>
-                        <button>Back To Home</button>
-                    </Link>
+                    </div>
                 </div>
             </div>
         )
