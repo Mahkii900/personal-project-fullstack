@@ -39,7 +39,7 @@ export default class Rooms extends Component {
                     {rooms}
                 </div>
                 <div className='room-right-content'>
-                    {this.state.showRoom ? <Room room={this.state.room}/>: this.state.roomsAvailable ? <div>Select a room</div> : null}
+                    {this.state.showRoom ? <Room room={this.state.room}/>: this.state.roomsAvailable ? <div className='room-select-display'>Please select a room</div> : null}
                 </div>
             </div>
         )

@@ -966,3 +966,85 @@
   background: #dce8e4;
   color: #7b7263;
 }
+
+/* History */
+.history-body {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+.history-main-content {
+  margin-top: 2%;
+  border: 3px solid #c6ca53;
+  border-radius: 20px;
+  padding: 2%;
+  width: 60%;
+  height: 65%;
+  background-color: rgba(85, 83, 88, .75);
+  display: flex;
+}
+
+.history-back-button {
+  width: 13%;
+}
+
+.history-back-button button {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  padding: 3%;
+  background: #7b7263;
+  color: #c6ca53;
+  cursor: pointer;
+}
+
+.history-back-button button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}
+
+.history-content-display {
+  border: 2px solid #555358;
+  border-radius: 20px;
+  padding: 2%;
+  width: 86%;
+  background: #5f6062;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.history-content-display::-webkit-scrollbar {
+  display: none;
+}
+
+.history-display-box {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  padding: 1%;
+  background: #dce8e4;
+  display: flex;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.history-issue-date {
+  width: 20%;
+}
+
+.history-issue-content {
+  width: 45%;
+}
+
+.history-issue-name {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* a quick fix for dashboard that i don't want to stick alllllll the way up top */
+.room-select-display {
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  margin-top: 2%;
+  font-size: 30px;
+}

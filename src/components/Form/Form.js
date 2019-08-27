@@ -82,7 +82,7 @@ export default class Form extends Component {
                             {this.state.device_id ?
                             <div className='form-device-input-box'>
                                 <div className='form-device-issue-input'>
-                                    <textarea name='textarea' cols='40' rows='5' placeholder='Type issue here...'></textarea>
+                                    <textarea name='textarea' cols='40' rows='5' placeholder='Type issue here...' onChange={e => this.setState({content: e.target.value})}></textarea>
                                 </div>
                                 <div className='form-issue-select'>
                                     <select onChange={(e) => this.setState({urgency: e.target.value})}>

@@ -21,6 +21,7 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }))
+app.use( express.static( `${__dirname}/../build` ) )
 
 //-----------ENDPOINTS-------------
 //auth endpoints
