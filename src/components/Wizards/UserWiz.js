@@ -41,23 +41,25 @@ class UserWiz extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <Link to={'/userdash'}>
-                        <button>Back</button>
-                    </Link>
-                </div>
-                <div>
-                    <div>
-                        <input placeholder={'Username'} onChange={e => this.setState({username: e.target.value})}/>
-                        <input placeholder={'Password'} onChange={e => this.setState({password: e.target.value})}/>
-                        <input placeholder={'First name'} onChange={e => this.setState({firstName: e.target.value})}/>
-                        <input placeholder={'Last name'} onChange={e => this.setState({lastName: e.target.value})}/>
-                        <input placeholder={'email'} onChange={e => this.setState({email: e.target.value})}/>
-                        <input placeholder={'Phone Number'} onChange={e => this.setState({phone: e.target.value})}/>
+            <div className='user-wiz-body'>
+                <div className='user-wiz-content'>
+                    <div className='user-wiz-back-button'>
+                        <Link to={'/userdash'}>
+                            <button>Back</button>
+                        </Link>
                     </div>
-                    <div>
-                        <button onClick={() => this.createNewUser()}>Add new user</button>
+                    <div className='user-wiz-input-content'>
+                        <div className='user-wiz-input-input'>
+                            <input placeholder={'Username'} onChange={e => this.setState({username: e.target.value})}/>
+                            <input placeholder={'Password'} onChange={e => this.setState({password: e.target.value})}/>
+                            <input placeholder={'First name'} onChange={e => this.setState({firstName: e.target.value})}/>
+                            <input placeholder={'Last name'} onChange={e => this.setState({lastName: e.target.value})}/>
+                            <input placeholder={'email'} onChange={e => this.setState({email: e.target.value})}/>
+                            <input placeholder={'Phone Number'} onChange={e => this.setState({phone: e.target.value})}/>
+                        </div>
+                        <div className='user-wiz-input-button'>
+                            <button onClick={() => this.createNewUser()}>Add new user</button>
+                        </div>
                     </div>
                 </div>
             </div>

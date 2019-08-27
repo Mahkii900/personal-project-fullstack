@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import RoomDevices from './RoomDevices';
 
 export default class Form extends Component {
     state = {
@@ -30,11 +29,6 @@ export default class Form extends Component {
         this.getDevices()
     }
 
-    displaySelectedDevice = () => {
-        let [device] = this.state.devices.filter((ele) => {return ele.device_id === this.state.device_id})
-        return <div>{device.name} {device.type}</div>
-    }
-
     createTicket() {
         if (this.state.urgency === '--') {
             return alert('Please select urgency of issue')
@@ -61,16 +55,10 @@ export default class Form extends Component {
     }
 
     render() {
-        const devices = this.state.devices.map((ele )=> {
-            return <div key={ele.device_id}>
-                <RoomDevices
-                    name={ele.name}
-                    type={ele.type}
-                />
-                <div>
-                    <button onClick={() => this.setState({device_id: ele.device_id})}>Select Device</button>
-                </div>
-            </div>
+        const devices = this.state.devices.map((ele)=> {
+            return <option key={ele.device_id} value={ele.device_id}>
+                {ele.name} {ele.type}
+            </option>
         })
         return (
             <div>
@@ -79,12 +67,10 @@ export default class Form extends Component {
                 </div>
                 <div>
                     <div>
-                        {/*Put in device selection here*/}
-                        {devices}
-                    </div>
-                    <div>
-                        <div>-----Selected Device------</div>
-                        {this.state.device_id ? this.displaySelectedDevice(): null}
+                        <select onChange={e => this.setState({device_id: e.target.value})}>
+                            <option value={0}>--</option>
+                            {devices}
+                        </select>
                     </div>
                     {this.state.device_id ?
                     <div>
