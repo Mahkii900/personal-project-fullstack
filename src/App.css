@@ -1048,3 +1048,88 @@
   margin-top: 2%;
   font-size: 30px;
 }
+
+/* user rooms display */
+.user-rooms-body {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+}
+
+.user-rooms-main-content {
+  border: 3px solid #c6ca53;
+  border-radius: 20px;
+  margin-top: 5%;
+  padding: 2%;
+  width: 60%;
+  height: 65%;
+  background-color: rgba(85, 83, 88, .75);
+  display: flex;
+}
+
+.user-rooms-back-button {
+  width: 13%;
+}
+
+.user-rooms-back-button button {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  background: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.user-rooms-back-button button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}
+
+.user-rooms-room-display {
+  border: 2px solid #555358;
+  border-radius: 20px;
+  padding: 2%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.user-rooms-room-display::-webkit-scrollbar {
+  display: none;
+}
+
+.user-rooms-room {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  margin-bottom: 2%;
+  padding: 1%;
+  background: #5f6062;
+  display: flex;
+  justify-content: space-between;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+}
+
+.user-rooms-button-box {
+  width: 17%;
+}
+
+.user-rooms-room button {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  padding: 2%;
+  background: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.user-rooms-room button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}

@@ -20,11 +20,11 @@ export default class UserRooms extends Component {
 
     render() {
         let rooms = this.state.rooms.map((ele, index) => {
-            return <div key={index}>
+            return <div key={index} className='user-rooms-room'>
                 <div>
                     {ele.name}
                 </div>
-                <div>
+                <div className='user-rooms-button-box'>
                     <Link to={`/rooms/${ele.room_id}`}>
                         <button>Go to this room</button>
                     </Link>
@@ -32,13 +32,17 @@ export default class UserRooms extends Component {
             </div>
         })
         return (
-            <div>
-                <div>
-                    <Link to={'/userdash'}>
-                        <button>Back</button>
-                    </Link>
+            <div className='user-rooms-body'>
+                <div className='user-rooms-main-content'>
+                    <div className='user-rooms-back-button'>
+                        <Link to={'/userdash'}>
+                            <button>Back</button>
+                        </Link>
+                    </div>
+                    <div className='user-rooms-room-display'>
+                        {rooms}
+                    </div>
                 </div>
-                {rooms}
             </div>
         )
     }
