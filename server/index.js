@@ -33,7 +33,7 @@ app.get('/auth/admin', midWare.authenticate, authCtrl.isAdmin) //gets whether or
 app.get('/rooms/forms/:name', rmCtrl.getRoomByName) //gets Room by room name
 app.get('/rooms/:room_id', rmCtrl.getRoomById) //gets Room by ID
 app.get('/rooms/unassigned/devices', midWare.authenticate, rmCtrl.getUnassignedDevices) //gets all unassigned devices
-app.get('/rooms/devices/:room_id', midWare.authenticate, rmCtrl.getRoomDevices) //gets room devices by room id
+app.get('/rooms/devices/:room_id',rmCtrl.getRoomDevices) //gets room devices by room id
 app.get('/users/rooms', midWare.authenticate, rmCtrl.getUserRooms) //gets rooms by user_id (originally i wanted it to be /rooms/users, but it kept throwing an error at me)
 app.get('/rooms/history/:room_id', midWare.authenticate, rmCtrl.getRoomHistory) //gets history by room id
 app.get('/rooms/users/:user_id', midWare.authenticate, rmCtrl.getRoomByUserID) //gets room by user id
@@ -61,5 +61,5 @@ app.post('/forms/new/urgent', msgCtrl.sendText) //sends a text to user in charge
 //DB CONNECTION AND LISTENER
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
-    app.listen(SERVER_PORT, () => console.log(`Captain's Log #${SERVER_PORT}: W are lost in space...`))
+    app.listen(SERVER_PORT, () => console.log(`Captain's Log #${SERVER_PORT}: We are lost in space...`))
 })

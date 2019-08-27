@@ -10,7 +10,7 @@ export default class Form extends Component {
         devices: [],
         device: '',
         device_id: 0,
-        urgency: ''
+        urgency: '--'
     }
 
     getDevices() {
@@ -36,11 +36,9 @@ export default class Form extends Component {
     }
 
     createTicket() {
-        /*
-        axios.put('/rooms/forms', {room_id: this.props.match.params.room_id, device_id: this.state.device_id, content: this.state.content}).then(res => {
-        })
-        .catch(err => alert('Request failed to submit'))
-        */
+        if (this.state.urgency === '--') {
+            return alert('Please select urgency of issue')
+        }
        if (this.state.urgency === 'Crazy urgent' || this.state.urgency === 'Not so crazy urgent') {
            axios.post('/forms/new/urgent', {
                room: this.state.room_name,
@@ -95,6 +93,7 @@ export default class Form extends Component {
                         </div>
                         <div>
                             <select onChange={(e) => this.setState({urgency: e.target.value})}>
+                                <option value='--'>--</option>
                                 <option value='Crazy urgent'>Crazy urgent</option>
                                 <option value='Not so crazy urgent'>Not so crazy urgent</option>
                                 <option value='Not urgent at all'>Not urgent at all</option>

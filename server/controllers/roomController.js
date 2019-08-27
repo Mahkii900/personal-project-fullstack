@@ -27,9 +27,9 @@ module.exports = {
         const devices = await db.get_room_devices([room_id])
         if (devices.length === 0) {
             return res.status(200).send([{device_id: 0, name: '', type: 'NO DEVICES FOUND FOR THIS ROOM'}])
+        } else {
+            res.status(200).send(devices)
         }
-
-        res.status(200).send(devices)
     },
 
     getUserRooms: async (req, res) => {

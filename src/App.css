@@ -10,8 +10,9 @@
 .home-background {
   height: 100vh;
   width: 100vw;
-  /*background-image: url(''); -------Put in leather couch or workbench photo here-------*/
+  background-image: url('https://snappygoat.com/b/5ed5d9a950049c50fd82927a8cb68161a3309690');
   background-position: center;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,10 +164,12 @@
 
 /* dashboard css */
 .main-content {
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('https://i.pinimg.com/originals/58/5a/93/585a93fe206ef02f67f84bb6a3d7c9c7.jpg');
+  background-position: center;
 }
 
 .top-bar {
@@ -207,7 +210,7 @@
   border-radius: 20px;
   background-color: rgba(85, 83, 88, .75);
   margin-top: 2%;
-  height: 89%;
+  height: 70%;
   width: 80%;
 }
 
@@ -298,13 +301,13 @@
 
 .room-bottom-container {
   margin-top: 5px;
-  height: 55vh;
+  height: 50vh;
   display: flex;
   justify-content: space-between;
 }
 
 .room-bottom-devices {
-  border: 5px solid #5f6062;
+  border: 5px solid #555358;
   border-radius: 10px;
   background: #5f6062;
   height: 100%;
@@ -433,7 +436,7 @@
 }
 
 .room-wiz-content {
-  border: 3px solid #555358;
+  border: 3px solid #c6ca53;
   border-radius: 20px;
   background-color: rgba(85, 83, 88, .75);
   width: 80%;
@@ -509,6 +512,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('https://img3.stockfresh.com/files/g/grivet/m/74/2353431_stock-photo-stones-background-details.jpg');
+  background-position: center;
 }
 
 .device-top-bar {
@@ -585,7 +590,7 @@
 .device-wiz-dash {
   border: 2px solid #c6ca53;
   border-radius: 20px;
-  background: #5f6062;
+  background-color: rgba(85, 83, 88, .75);
   height: 60%;
   margin-top: 5%;
   width: 55%;
@@ -649,3 +654,95 @@
   background: #c6ca53;
   background: #dce8e4;
 }
+
+.userdash-main-content {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-dash-display {
+  border: 3px solid #c6ca53;
+  border-radius: 20px;
+  margin-top: 5%;
+  padding: 1%;
+  height: 55%;
+  width: 70%;
+  background-color: rgba(85, 83, 88, .75);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.user-dash-display::-webkit-scrollbar {
+  display: none;
+}
+
+.user-info {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  padding: 1%;
+  display: flex;
+  background: #5f6062;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+.user-info-button  button {
+  border: 2px solid #555358;
+  border-radius: 10px;
+  background: #7b7263;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.user-info-button button:hover {
+  background: #dce8e4;
+  color: #7b7263;
+}
+
+.user-info-cont {
+  width: 85%;
+}
+
+.user-info-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info-link {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info-details-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #c6ca53;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 17px;
+}
+
+.user-info-link:link {
+  text-decoration: none;
+}
+
+.user-info-link:visited {
+  text-decoration: none;
+}
+
+.user-info-link:active {
+  text-decoration: none;
+}
+
+/* user wiz */

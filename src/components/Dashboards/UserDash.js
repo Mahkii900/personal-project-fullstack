@@ -25,8 +25,8 @@ export default class UserDash extends Component {
 
     render() {
         const users = this.state.users.map((ele, index) => {
-            return <div key={index}>
-                    <div>
+            return <div key={index} className='user-info'>
+                    <div className='user-info-cont'>
                         <User
                             id={ele.user_id}
                             username={ele.username}
@@ -36,13 +36,13 @@ export default class UserDash extends Component {
                             lastName={ele.last_name}
                         />
                     </div>
-                    <div>
+                    <div className='user-info-button'>
                         <button onClick={() => this.deleteUser(ele.user_id)}>Delete this user</button>
                     </div>
                 </div>
         })
         return (
-            <div>
+            <div className='userdash-main-content'>
                 <div className='top-bar'>
                     <div className="admin-bar">
                         <Link to={'/devicedash'}>
@@ -56,7 +56,9 @@ export default class UserDash extends Component {
                         </Link>
                     </div>
                 </div>
-                {users}
+                <div className='user-dash-display'>
+                    {users}
+                </div>
             </div>
         )
     }
