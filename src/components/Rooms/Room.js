@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {setDevices} from '../../ducks/reducer'
 
-export default class Room extends Component {
+class Room extends Component {
     state = {
         devices: [],
         showDevices: false,
@@ -12,6 +14,7 @@ export default class Room extends Component {
 
     getDevices() {
         axios.get(`/rooms/devices/${this.props.room.room_id}`).then(res => {
+            setDevices(res.data)
             this.setState({devices: res.data})
         })
     }
@@ -49,7 +52,6 @@ export default class Room extends Component {
     }
 
     render() {
-        //------Maybe add recent ticket dates to devices--------
         let devices = this.state.devices.map((ele) => <div className='room-bottom-device-container' key={ele.device_id}>
                 <div className='room-device-name-container'>
                     {ele.name}
@@ -114,3 +116,10 @@ export default class Room extends Component {
         }
     }
 }
+
+function mapStateToProps(reduxState) {
+    const {devices} = reduxState
+    return {devices}
+}
+
+export default connect(mapStateToProps, {setDevices})(Room)

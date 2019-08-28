@@ -1,18 +1,23 @@
 //INITIAL STATE
 const intialState = {
-    devices: [],
-    rooms: [],
-    history: []
+    devices: []
 }
 //ACTION CONSTS
+const SET_DEVICES = 'SET_DEVICES'
 
 //ACTION BUILDERS
+export function setDevices(devices) {
+    return {
+        type: SET_DEVICES,
+        payload: {devices}
+    }
+}
 
 //REDUCER
 export default (state = intialState, action) => {
-    //eslint-disable-next-line
-    const {type, payload} = action
-    switch(type) {
+    switch(action.type) {
+        case SET_DEVICES:
+            return action.payload
         default: return state
     }
 }

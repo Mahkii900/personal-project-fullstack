@@ -51,7 +51,7 @@ export default class RoomDash extends Component {
         })
 
         let rooms = this.state.rooms.map((ele) => {
-            return <div key={ele.room_id}>
+            return <div key={ele.room_id} className='room-dash-rooms'>
                 <div>
                     {ele.name}
                 </div>
@@ -86,13 +86,17 @@ export default class RoomDash extends Component {
             </div>
         })
         return (
-            <div>
-                <div>
-                    <Link to={'/dashboard'}>
-                        <button>Back</button>
-                    </Link>
+            <div className='room-dash-body'>
+                <div className='room-dash-main-content'>
+                    <div className='room-dash-back-button'>
+                        <Link to={'/dashboard'}>
+                            <button>Back</button>
+                        </Link>
+                    </div>
+                    <div className='room-dash-room-display'>
+                        {rooms}
+                    </div>
                 </div>
-                {rooms}
             </div>
         )
     }
