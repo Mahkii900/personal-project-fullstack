@@ -28,9 +28,9 @@
   justify-content: center;
   font-family: 'Varela Round', sans-serif;
   font-style: italic;
-  font-size: 30px;
+  font-size: 2vw;
   background: rgba(95, 96, 98, 0.9);
-  width: 17%;
+  width: 20%;
   color: #c6ca53;
 }
 
@@ -58,7 +58,7 @@
   margin-top: 10px;
   padding: 2px;
   font-family: 'Varela Round', sans-serif;
-  font-size: 17px;
+  font-size: 1.5vw;
 }
 
 .form-target-box button {
@@ -66,7 +66,7 @@
   border: none;
   padding: 3px;
   font-family: 'Varela Round', sans-serif;
-  font-size: 17px;
+  font-size: 1.5vw;
   cursor: pointer;
 }
 
@@ -91,7 +91,7 @@
   opacity: 1;
   padding: 2px;
   font-family: 'Varela Round', sans-serif;
-  font-size: 17px;
+  font-size: 1.5vw;
 }
 
 .login-box button {
@@ -99,13 +99,83 @@
   border: none;
   font-family: 'Varela Round', sans-serif;
   padding: 3px;
-  font-size: 17px;
+  font-size: 1.5vw;
   cursor: pointer;
 }
 
 .login-box button:hover {
   background-color: #555358;
   color: #c6ca53;
+}
+
+@media only screen and (max-width: 1100px) {
+  .form-target-box {
+    width: 20%;
+    margin-left: 20%;
+  }  
+}
+
+@media only screen and (max-width: 1000px) {
+  .title-box {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .title-box {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .form-target-box {
+    margin-left: 6%; 
+    border-right: 1px solid #555358;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 40%;
+  }
+
+  .form-target-box input {
+    font-size: 2.5vw;
+  }
+
+  .form-target-box button {
+    font-size: 2.5vw;
+  }
+
+  .login-box {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: 1px solid #555358;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 40%;
+  }
+
+  .login-box input {
+    font-size: 2.5vw;
+  }
+
+  .login-box button {
+    font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .form-target-box {
+    border-radius: 0;
+    border-left: none;
+    margin-left: 0;
+    width: 45%;
+  }
+
+  .login-box {
+    margin-right: 0;
+    border-right: none;
+    border-radius: 0;
+    width: 46%;
+  }
 }
 
 /* Nav bar css */
