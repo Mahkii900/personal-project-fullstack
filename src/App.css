@@ -470,6 +470,8 @@ button {
   justify-content: space-around;
 }
 
+/* ---------Do devices and dashboards with same styling for each type----------- */
+
 /*
 .nav-bar-content {
   height: 10vh;
