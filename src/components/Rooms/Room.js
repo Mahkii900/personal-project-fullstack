@@ -53,12 +53,15 @@ class Room extends Component {
 
     render() {
         let devices = this.state.devices.map((ele) => <div className='room-bottom-device-container' key={ele.device_id}>
+            <div>
+
                 <div className='room-device-name-container'>
                     {ele.name}
                 </div>
                 <div className='room-device-model-container'>
                     {ele.type}
                 </div>
+            </div>
                 <div className='room-device-button-container'>
                     <button onClick={() => this.removeDeviceFromRoom(ele.device_id)}>Remove {ele.name}</button>
                 </div>
@@ -92,7 +95,7 @@ class Room extends Component {
                                     <div className='room-bottom-selection-add'>
                                         <button onClick={() => this.assignDeviceToRoom(this.props.room.room_id)}>Add device</button>
                                     </div>
-                                    <div classNam='room-bottom-selection-cancel'>
+                                    <div className='room-bottom-selection-cancel'>
                                         <button onClick={() => this.setState({showDevices: false})}>Cancel</button>
                                     </div>
                                 </div>
