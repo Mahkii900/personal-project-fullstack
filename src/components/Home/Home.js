@@ -36,10 +36,12 @@ export default class Home extends Component {
                 </div>
                 <div className="home">
                     <div className="form-target-box">
+                        <div>Go To Work Request Form</div>
                         <input onChange={e => this.setState({room_name: e.target.value})}placeholder={'Room ID'}/>
                         <button onClick={() => this.goToForm()}>Go to form</button>
                     </div>
                     <div className="login-box">
+                        <div>Login</div>
                         <input onChange={e => this.setState({username: e.target.value})}placeholder={'Username'}/>
                         <input type="password" onChange={e => this.setState({password: e.target.value})}placeholder={'Password'}/>
                         <button onClick={() => this.login()}>Log In</button>

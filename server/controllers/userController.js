@@ -25,4 +25,15 @@ module.exports = {
         await db.delete_user([user_id])
         res.sendStatus(200)
     }
+/*,
+
+    register: async (req, res) => {
+        const db = req.app.get('db')
+        const {password} = req.body
+
+        const salt = bcyrpt.genSaltSync(10)
+        const hash = bcyrpt.hashSync(password, salt)
+        await db.add_password([hash])
+        res.sendStatus(200)
+    }*/
 }

@@ -21,7 +21,7 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }))
-app.use( express.static( `${__dirname}/../build` ) )
+app.use(express.static( `${__dirname}/../build` ) )
 
 //-----------ENDPOINTS-------------
 //auth endpoints
@@ -54,6 +54,7 @@ app.delete('/devices/:device_id', dvcCtrl.deleteDevice) //deletes device
 app.get('/users', midWare.authenticate, userCtrl.getAllUsers) //gets all users
 app.put('/users/new', midWare.authenticate, midWare.adminAccess, userCtrl.createNewUser) //creates a new user
 app.delete('/users/:user_id', midWare.authenticate, midWare.adminAccess, userCtrl.deleteUser)
+//app.post('/users/password', userCtrl.register)
 
 //message endpoints
 app.post('/forms/new', msgCtrl.sendEmail) //sends an email to user in charge of room

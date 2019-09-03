@@ -22,9 +22,7 @@ class Nav extends Component {
             <div className="nav-bar">
                 <div className="nav-bar-content">
                     <div className="nav-bar-username">
-                        <div className='nav-bar-username-container'>
-                            User: {this.state.username}
-                        </div>
+                        User: {this.state.username}
                     </div>
                     <div className="nav-bar-logout">
                         <Link to={'/'}>
