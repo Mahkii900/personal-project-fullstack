@@ -356,6 +356,19 @@ button {
   align-items: center;
 }
 
+@media screen and (min-width: 1100px) {
+  .bottom-stuff {
+    height: 70vh;
+    width: 90%;
+  }
+
+  .room-main-content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
 .room-left-content {
   display: flex;
   flex-direction: column;
