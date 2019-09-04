@@ -53,35 +53,38 @@ export default class RoomDash extends Component {
         let rooms = this.state.rooms.map((ele) => {
             return <div key={ele.room_id} className='room-dash-rooms'>
                 <div>
-                    {ele.name}
+                    <div>
+                        {ele.name}
+                    </div>
+                    <div>
+                        {ele.first_name} {ele.last_name}
+                    </div>
                 </div>
                 <div>
-                    {ele.first_name} {ele.last_name}
-                </div>
-                <div>
-
-                    {this.state.showAssignment && ele.room_id === this.state.id ? 
-                    (
-                        <div>
-                            <div>
-                                <select onChange={(e) => this.setState({user_id: e.target.value})}>
-                                <option value={0}>--</option>
-                                    {users}
-                                </select>
+                    <div>
+                        {this.state.showAssignment && ele.room_id === this.state.id ? 
+                        (
+                            <div className='room-dash-selection'>
+                                <div>
+                                    <select onChange={(e) => this.setState({user_id: e.target.value})}>
+                                    <option value={0}>--</option>
+                                        {users}
+                                    </select>
+                                </div>
+                                <div>
+                                    <button onClick={() => this.assignRoom(ele.room_id, this.state.user_id)}>Confirm</button>
+                                </div>
                             </div>
+                        )
+                        :(
                             <div>
-                                <button onClick={() => this.assignRoom(ele.room_id, this.state.user_id)}>Confirm</button>
+                                <button onClick={() => this.setState({showAssignment: true, id: ele.room_id})}>Assign user to this room</button>
                             </div>
-                        </div>
-                    )
-                    :(
-                        <div>
-                            <button onClick={() => this.setState({showAssignment: true, id: ele.room_id})}>Assign user to this room</button>
-                        </div>
-                    )}
-                </div>
-                <div>
-                    <button onClick={() => this.deleteRoom(ele.room_id)}>Delete {ele.name}</button>
+                        )}
+                    </div>
+                    <div>
+                        <button onClick={() => this.deleteRoom(ele.room_id)}>Delete {ele.name}</button>
+                    </div>
                 </div>
             </div>
         })

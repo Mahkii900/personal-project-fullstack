@@ -42,7 +42,7 @@ export default class UserDash extends Component {
                 </div>
         })
         return (
-            <div className='userdash-main-content'>
+            <div className='userdash-body'>
                 <div className='top-bar'>
                     <div className="admin-bar">
                         <Link to={'/devicedash'}>
@@ -56,7 +56,7 @@ export default class UserDash extends Component {
                         </Link>
                     </div>
                 </div>
-                <div className='user-dash-display'>
+                <div className='dash-main-content'>
                     {users}
                 </div>
             </div>

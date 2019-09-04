@@ -390,11 +390,12 @@ button {
 
 @media screen and (min-width: 1100px) {
   .bottom-stuff {
-    height: 70vh;
+    height: 77%;
     width: 90%;
   }
 
   .room-main-content {
+    height: 100%;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
@@ -402,7 +403,7 @@ button {
 
   .room-left-content {
     width: 20%;
-    height: 61vh;
+    height: 100%;
   }
 
   .room-left-content::-webkit-scrollbar {
@@ -413,6 +414,7 @@ button {
   .room-right-content {
     margin-left: 5%;
     margin-top: 0;
+    height: 100%;
   }
 
   .room-bottom-devices::-webkit-scrollbar {
@@ -644,7 +646,7 @@ button {
 
 /*Wizards*/
 .wizard-main-content {
-  margin-top: 5%;
+  margin-top: 3%;
   border: 2px solid #c6ca53;
   border-radius: 20px;
   box-sizing: border-box;
@@ -657,6 +659,14 @@ button {
   align-items: center;
   font-family: 'Varela Round', sans-serif;
   font-size: 3vh;
+}
+
+.user-wiz-body {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://img4.goodfon.com/wallpaper/nbig/b/df/kamni-pebbles-texture-galka-white-belye-pliazh-beach-marin-3.jpg');
+  background-position: center;
 }
 
 .user-wiz-input-content {
@@ -711,6 +721,14 @@ button {
   font-size: 2.5vh;
 }
 
+.device-wiz-body {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  background-image: url('https://img3.stockfresh.com/files/g/grivet/m/74/2353431_stock-photo-stones-background-details.jpg');
+  background-position: center;
+}
+
 .room-wiz, .device-wiz {
   margin-top: 15%;
   height: 70vh;
@@ -761,6 +779,160 @@ button {
 }
 
 /*Dashboards*/
+.room-dash-body {
+  height: 90vh;
+  background-image: url('https://i.pinimg.com/originals/58/5a/93/585a93fe206ef02f67f84bb6a3d7c9c7.jpg');
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-dash-room-display {
+  margin-top: 3%;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  background: #5f6062;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.room-dash-rooms {
+  margin-bottom: 5px;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1%;
+  height: 23%;
+  display: flex;
+  color: #c6ca53;
+}
+
+.room-dash-rooms > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.room-dash-selection select, .room-dash-selection button{
+  font-size: 3vh;
+}
+
+@media screen and (min-width: 1100px) {
+  .room-dash-room-display::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+
+  .room-dash-rooms {
+    justify-content: space-between;
+  }
+
+  .room-dash-rooms > div {
+    flex-direction: row;
+    width: 40%;
+  }
+}
+
+.userdash-body, .devicedash-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userdash-body {
+  height: 90vh;
+  background-image: url('https://img4.goodfon.com/wallpaper/nbig/b/df/kamni-pebbles-texture-galka-white-belye-pliazh-beach-marin-3.jpg');
+  background-position: center;
+}
+
+.devicedash-body {
+  height: 90vh;
+  background-image: url('https://img3.stockfresh.com/files/g/grivet/m/74/2353431_stock-photo-stones-background-details.jpg');
+  background-position: center;
+}
+
+.dash-main-content {
+  margin-top: 5%;
+  border: 2px solid #c6ca53;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 2%;
+  height: 80vh;
+  width: 100%;
+  background: rgba(95, 96, 98, 0.75);
+  font-family: 'Varela Round', sans-serif;
+  font-size: 3vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.user-info {
+  margin-bottom: 5px;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  background: #555358;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info-cont {
+  height: 80%;
+}
+
+.user-info-details-container, .user-info-container, .user-info-link {
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info-link:link, .user-info-link:visited {
+  color: #c6ca53;
+  text-decoration: none;
+}
+
+.email {
+  font-size: 2.5vh;
+}
+
+@media screen and (min-width: 1100px) {
+  .dash-main-content {
+    margin-top: 3%;
+    height: 70vh;
+    width: 60%;
+  }
+
+  .dash-main-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+}
+
+.device-display-info-container {
+  margin-bottom: 5px;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 2%;
+  background: #555358;
+  display: flex;
+  justify-content: space-between;
+  color: #c6ca53;
+}
+
 
 /*
 .nav-bar-content {

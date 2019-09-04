@@ -23,7 +23,7 @@ class DeviceWiz extends Component {
 
     render() {
         return (
-            <div className='main-content-device-wiz'>
+            <div className='device-wiz-body'>
                 <div className='wizard-main-content device-wiz'>
                     <div className='back-button'>
                         <Link to={'/devicedash'}>

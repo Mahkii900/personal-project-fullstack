@@ -9,7 +9,7 @@ export default class User extends Component {
                 <div className='user-info-details-container'>                   
                    <div>{this.props.username}</div>
                    <div>{this.props.firstName} {this.props.lastName}</div>
-                   <div>{this.props.email}</div>
+                   <div className='email'>{this.props.email}</div>
                    <div>{this.props.phone}</div>
                 </div>
             </Link>
