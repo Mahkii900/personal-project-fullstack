@@ -872,6 +872,13 @@ button {
   overflow-y: scroll;
 }
 
+@media screen and (min-width: 1100px) {
+  .dash-main-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+}
+
 .user-info {
   margin-bottom: 5px;
   border: 2px solid #c6ca53;
