@@ -596,6 +596,49 @@ button {
   text-align: center;
 }
 
+/*User Rooms*/
+.user-rooms-body {
+  box-sizing: border-box;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://img4.goodfon.com/wallpaper/nbig/b/df/kamni-pebbles-texture-galka-white-belye-pliazh-beach-marin-3.jpg');
+  background-position: center;
+}
+
+.user-rooms-room-display {
+  margin-top: 5%;
+  border: 2px solid #dce8e4;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  background: #555358;
+  width: 100%;
+  height: 90%;
+  color: #c6ca53;
+  font-size: 3vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.user-rooms-room {
+  margin-bottom: 2%;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1%;
+  background: #5f6062;
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 1100px) {
+  .user-rooms-room-display::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+}
 /* ---------Do devices and dashboards with same styling for each type----------- */
 
 /*

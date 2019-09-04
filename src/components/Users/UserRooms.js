@@ -33,7 +33,7 @@ export default class UserRooms extends Component {
         })
         return (
             <div className='user-rooms-body'>
-                <div className='user-rooms-main-content'>
+                <div className='history-main-content'>
                     <div className='user-rooms-back-button'>
                         <Link to={'/userdash'}>
                             <button>Back</button>
