@@ -280,6 +280,7 @@ button {
   }
 
   .nav-bar-username {
+    width: 20%;
     padding: 1%;
   }
 }
@@ -639,7 +640,127 @@ button {
     width: 0;
   }
 }
-/* ---------Do devices and dashboards with same styling for each type----------- */
+
+
+/*Wizards*/
+.wizard-main-content {
+  margin-top: 5%;
+  border: 2px solid #c6ca53;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 2%;
+  height: 87vh;
+  width: 100%;
+  background: rgba(95, 96, 98, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 3vh;
+}
+
+.user-wiz-input-content {
+  margin-top: 5%;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  height: 90%;
+  width: 100%;
+  background: #5f6062;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user-wiz-input-input {
+  height: 70%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-wiz-input-input input {
+  font-size: 2.5vh;
+}
+
+.room-wiz-main-content {
+  margin-top: 10%;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: #5f6062;
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.room-wiz-main-content div {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.room-wiz-main-content input {
+  width: 100%;
+  font-size: 2.5vh;
+}
+
+.room-wiz, .device-wiz {
+  margin-top: 15%;
+  height: 70vh;
+}
+
+.device-wiz-main-content {
+  margin-top: 5%;
+  border: 2px solid #c6ca53;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  background: #5f6062;
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.device-wiz-input {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.device-wiz-input input {
+  width: 100%;
+  font-size: 2.5vh;
+}
+
+@media screen and (min-width: 1100px) {
+  .wizard-main-content {
+    height: 70vh;
+  }
+
+  .room-wiz, .device-wiz {
+    margin-top: 5%;
+  }
+
+  .room-wiz-main-content {
+    margin-top: 2%;
+  }
+
+  .room-wiz-main-content input, .device-wiz-input input {
+    width: 60%;
+  }
+}
+
+/*Dashboards*/
 
 /*
 .nav-bar-content {

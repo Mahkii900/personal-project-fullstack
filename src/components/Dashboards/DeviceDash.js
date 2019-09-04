@@ -38,7 +38,7 @@ export default class DeviceDash extends Component {
         })
         return (
             <div className='device-dash'>
-                <div className='device-top-bar'>
+                <div className='top-bar'>
                     <div className="admin-bar">
                         <Link to={'/userdash'}>
                             <button>View users</button>

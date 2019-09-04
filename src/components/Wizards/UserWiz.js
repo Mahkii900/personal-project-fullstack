@@ -42,7 +42,7 @@ class UserWiz extends Component {
     render() {
         return (
             <div className='user-wiz-body'>
-                <div className='user-wiz-content'>
+                <div className='wizard-main-content'>
                     <div className='user-wiz-back-button'>
                         <Link to={'/userdash'}>
                             <button>Back</button>

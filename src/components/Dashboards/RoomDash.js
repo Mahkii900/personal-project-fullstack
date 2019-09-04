@@ -87,7 +87,7 @@ export default class RoomDash extends Component {
         })
         return (
             <div className='room-dash-body'>
-                <div className='room-dash-main-content'>
+                <div className='wizard-main-content'>
                     <div className='room-dash-back-button'>
                         <Link to={'/dashboard'}>
                             <button>Back</button>
