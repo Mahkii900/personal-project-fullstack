@@ -23,7 +23,7 @@ module.exports = {
         let [{email}] = await db.get_email_by_room_id([room_id])
         let [{type}] = await db.get_device_by_id([device_id])
         let mailOptions = {
-            from: 'notyournormalordinaryemail@gmail.com',
+            from: secret.email,
             to: email,
             subject: `Maintenance required for ${room}`,
             text: `Maintenance is necessary for ${type}.\nUrgency: ${urgency}\nIssue: ${content}`
